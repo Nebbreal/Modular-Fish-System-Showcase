@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "hulan.sln"
+    "dotnet.defaultSolution": "pillo-hulan-1.sln"
 }
