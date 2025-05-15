@@ -4,10 +4,10 @@ public class PISKController : MonoBehaviour
 {
     public static PISKController Instance { get; private set; }
 
-    [Header("Pressure")]
-    [SerializeField] public float Pressure { get; private set; }
-    [SerializeField] public float MinPressure { get; private set; } = 0f;
-    [SerializeField] public float MaxPressure { get; private set; } = 100f;
+    [field: Header("Pressure")]
+    [field: SerializeField] public float Pressure { get; private set; }
+    [field: SerializeField] public float MinPressure { get; private set; } = 0f;
+    [field: SerializeField] public float MaxPressure { get; private set; } = 100f;
 
     void Awake()
     {

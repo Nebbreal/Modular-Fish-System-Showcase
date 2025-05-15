@@ -352,6 +352,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1eabdaccc7e234459f854066e70bbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Pressure>k__BackingField: 0
+  <MinPressure>k__BackingField: 0
+  <MaxPressure>k__BackingField: 100
 --- !u!114 &1185234864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d67c5c350777424f957889d3eb91621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressureSlider: {fileID: 1619408714}
+  pressureValueText: {fileID: 1986162813}
 --- !u!1 &1316249655
 GameObject:
   m_ObjectHideFlags: 0
