@@ -22,9 +22,16 @@ public class PISKControllerUI : MonoBehaviour
 
     void InitializeLerpSliders()
     {
-        pressLerpPressureSlider.value = Mathf.Round(PISKController.Instance.PressLerpSpeed * 10f) / 10f;
-        releaseLerpPressureSlider.value = Mathf.Round(PISKController.Instance.ReleaseLerpSpeed * 10f) / 10f;
-        LerpThresholdSlider.value = Mathf.Round(PISKController.Instance.LerpSpeedThreshold * 1000f) / 1000f;
+        float pressLerp = Mathf.Round(PISKController.Instance.PressLerpSpeed * 10f) / 10f;
+        float releaseLerp = Mathf.Round(PISKController.Instance.ReleaseLerpSpeed * 10f) / 10f;
+        float threshold = Mathf.Round(PISKController.Instance.LerpSpeedThreshold * 1000f) / 1000f;
+
+        pressLerpPressureSlider.value = pressLerp;
+        releaseLerpPressureSlider.value = releaseLerp;
+        LerpThresholdSlider.value = threshold;
+
+        pressLerpPressureSlider.minValue = threshold;
+        releaseLerpPressureSlider.minValue = threshold;
     }
 
     void FixedUpdate()
@@ -33,7 +40,7 @@ public class PISKControllerUI : MonoBehaviour
 
         pressureSlider.value = pressure;
 
-        pressureValueText.text = $"Pressure: {pressure.ToString("n1")}";
+        pressureValueText.text = $"Pressure: {pressure.ToString("n0")}";
         pressLerpText.text = $"Press: {pressLerpPressureSlider.value.ToString("n2")}";
         releaseLerpText.text = $"Release: {releaseLerpPressureSlider.value.ToString("n2")}";
         LerpThresholdText.text = $"Threshold: {LerpThresholdSlider.value.ToString("n3")}";
@@ -64,6 +71,9 @@ public class PISKControllerUI : MonoBehaviour
             float rounded = Mathf.Round(value * 1000f) / 1000f;
             LerpThresholdText.text = $"Threshold: {rounded}";
             PISKController.Instance.SetLerpSpeedThreshold(rounded);
+
+            pressLerpPressureSlider.minValue = rounded;
+            releaseLerpPressureSlider.minValue = rounded;
         });
     }
 }
