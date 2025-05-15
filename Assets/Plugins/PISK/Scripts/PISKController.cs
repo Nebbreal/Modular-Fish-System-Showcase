@@ -11,8 +11,8 @@ public class PISKController : MonoBehaviour
     [field: SerializeField] public float MaxPressure { get; private set; } = 100f;
 
     [Header("Pressure Lerp Settings")]
-    [SerializeField] private float pressLerpSpeed = 4f;
-    [SerializeField] private float releaseLerpSpeed = 8f;
+    [field: SerializeField] public float PressLerpSpeed = 4f;
+    [field: SerializeField] public float ReleaseLerpSpeed = 8f;
 
     private float targetPressure;
 
@@ -32,7 +32,7 @@ public class PISKController : MonoBehaviour
         bool spacePressed = Keyboard.current?.spaceKey?.isPressed ?? false;
 
         targetPressure = spacePressed ? MaxPressure : MinPressure;
-        float lerpSpeed = spacePressed ? pressLerpSpeed : releaseLerpSpeed;
+        float lerpSpeed = spacePressed ? PressLerpSpeed : ReleaseLerpSpeed;
 
         Pressure = Mathf.Lerp(Pressure, targetPressure, lerpSpeed * Time.deltaTime);
     }
@@ -40,5 +40,15 @@ public class PISKController : MonoBehaviour
     void AdjustPressure(float amount)
     {
         Pressure = Mathf.Clamp(Pressure + amount, MinPressure, MaxPressure);
+    }
+
+    public void SetPressLerpSpeed(float amount)
+    {
+        PressLerpSpeed = amount;
+    }
+
+    public void SetReleaseLerpSpeed(float amount)
+    {
+        ReleaseLerpSpeed = amount;
     }
 }
