@@ -7,6 +7,11 @@ public class PISKControllerUI : MonoBehaviour
     [SerializeField] private Slider pressureSlider;
     [SerializeField] private TextMeshProUGUI pressureValueText;
 
+    void Start()
+    {
+        GetSliderRangeValues();
+    }
+
     void FixedUpdate()
     {
         float pressure = PISKController.Instance.Pressure;
@@ -15,9 +20,9 @@ public class PISKControllerUI : MonoBehaviour
         pressureValueText.text = pressure.ToString("n0");
     }
 
-    void SetSliderMinMaxValues(float min = 0f, float max = 100f)
+    void GetSliderRangeValues()
     {
-        pressureSlider.minValue = min;
-        pressureSlider.maxValue = max;
+        pressureSlider.minValue = PISKController.Instance.MinPressure;
+        pressureSlider.maxValue = PISKController.Instance.MaxPressure;
     }
 }
