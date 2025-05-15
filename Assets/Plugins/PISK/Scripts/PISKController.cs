@@ -22,7 +22,11 @@ public class PISKController : MonoBehaviour
 
     void Update()
     {
-        Pressure += 0.1f;
+        AdjustPressure(0.04f);
     }
 
+    void AdjustPressure(float amount)
+    {
+        Pressure = Mathf.Clamp(Pressure + amount, MinPressure, MaxPressure);
+    }
 }

@@ -9,7 +9,7 @@ public class PISKControllerUI : MonoBehaviour
 
     void FixedUpdate()
     {
-        float pressure = PISKController.Pressure;
+        float pressure = PISKController.Instance.Pressure;
 
         pressureSlider.value = pressure;
         pressureValueText.text = pressure.ToString("n0");
