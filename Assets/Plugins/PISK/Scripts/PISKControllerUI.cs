@@ -12,6 +12,7 @@ public class PISKControllerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI releaseLerpText;
     [SerializeField] private Slider LerpThresholdSlider;
     [SerializeField] private TextMeshProUGUI LerpThresholdText;
+    [SerializeField] private Toggle ShowPressureDecimalsToggle;
 
     void Start()
     {
@@ -36,11 +37,13 @@ public class PISKControllerUI : MonoBehaviour
 
     void FixedUpdate()
     {
-        float pressure = Mathf.Round(PISKController.Instance.Pressure);
+        float pressure = PISKController.Instance.Pressure;
 
         pressureSlider.value = pressure;
 
-        pressureValueText.text = $"Pressure: {pressure.ToString("n0")}";
+        string format = ShowPressureDecimalsToggle.isOn ? "n2" : "n0";
+        pressureValueText.text = $"Pressure: {pressure.ToString(format)}";
+
         pressLerpText.text = $"Press: {pressLerpPressureSlider.value.ToString("n2")}";
         releaseLerpText.text = $"Release: {releaseLerpPressureSlider.value.ToString("n2")}";
         LerpThresholdText.text = $"Threshold: {LerpThresholdSlider.value.ToString("n3")}";
