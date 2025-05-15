@@ -37,7 +37,7 @@ public class PISKController : MonoBehaviour
         float lerpSpeed = spacePressed ? PressLerpSpeed : ReleaseLerpSpeed;
 
         float rawPressure = Mathf.Lerp(Pressure, targetPressure, lerpSpeed * Time.deltaTime);
-        Pressure = Mathf.Round(rawPressure * 100f) / 100f;
+        Pressure = SmartRound(rawPressure, targetPressure);
     }
 
     void AdjustPressure(float amount)
@@ -58,5 +58,15 @@ public class PISKController : MonoBehaviour
     public void SetLerpSpeedThreshold(float amount)
     {
         LerpSpeedThreshold = amount;
+    }
+
+    private float SmartRound(float value, float target)
+    {
+        if (Mathf.Abs(value - target) <= LerpSpeedThreshold)
+        {
+            return target;
+        }
+
+        return Mathf.Round(value * 100f) / 100f;
     }
 }

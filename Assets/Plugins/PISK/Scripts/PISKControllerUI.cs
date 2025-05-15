@@ -22,14 +22,14 @@ public class PISKControllerUI : MonoBehaviour
 
     void InitializeLerpSliders()
     {
-        pressLerpPressureSlider.value = PISKController.Instance.PressLerpSpeed;
-        releaseLerpPressureSlider.value = PISKController.Instance.ReleaseLerpSpeed;
-        LerpThresholdSlider.value = PISKController.Instance.LerpSpeedThreshold;
+        pressLerpPressureSlider.value = Mathf.Round(PISKController.Instance.PressLerpSpeed * 10f) / 10f;
+        releaseLerpPressureSlider.value = Mathf.Round(PISKController.Instance.ReleaseLerpSpeed * 10f) / 10f;
+        LerpThresholdSlider.value = Mathf.Round(PISKController.Instance.LerpSpeedThreshold * 1000f) / 1000f;
     }
 
     void FixedUpdate()
     {
-        float pressure = PISKController.Instance.Pressure;
+        float pressure = Mathf.Round(PISKController.Instance.Pressure);
 
         pressureSlider.value = pressure;
 
@@ -49,17 +49,21 @@ public class PISKControllerUI : MonoBehaviour
     {
         pressLerpPressureSlider.onValueChanged.AddListener((value) =>
         {
-            PISKController.Instance.SetPressLerpSpeed(value);
+            float rounded = Mathf.Round(value * 10f) / 10f;
+            PISKController.Instance.SetPressLerpSpeed(rounded);
         });
 
         releaseLerpPressureSlider.onValueChanged.AddListener((value) =>
         {
-            PISKController.Instance.SetReleaseLerpSpeed(value);
+            float rounded = Mathf.Round(value * 10f) / 10f;
+            PISKController.Instance.SetReleaseLerpSpeed(rounded);
         });
 
         LerpThresholdSlider.onValueChanged.AddListener((value) =>
         {
-            PISKController.Instance.SetLerpSpeedThreshold(value);
+            float rounded = Mathf.Round(value * 1000f) / 1000f;
+            LerpThresholdText.text = $"Threshold: {rounded}";
+            PISKController.Instance.SetLerpSpeedThreshold(rounded);
         });
     }
 }
