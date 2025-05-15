@@ -1,19 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PISKController : MonoBehaviour
 {
-    static public float pressure { get; private set; }
+    static public float Pressure { get; private set; }
 
-    private Slider pressureSlider;
-
-    void Awake()
+    void Update()
     {
-        pressureSlider = GetComponentInChildren<Slider>();
-    }
-
-    void FixedUpdate()
-    {
-        pressureSlider.value = pressure;
+        Pressure += 0.1f;
     }
 }
