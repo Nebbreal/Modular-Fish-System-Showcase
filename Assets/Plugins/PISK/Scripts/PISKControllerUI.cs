@@ -31,8 +31,8 @@ public class PISKControllerUI : MonoBehaviour
         pressureSlider.value = pressure;
 
         pressureValueText.text = $"Pressure: {pressure.ToString("n0")}";
-        pressLerpText.text = $"Press: {pressLerpPressureSlider.value.ToString("n0")}";
-        releaseLerpText.text = $"Release: {releaseLerpPressureSlider.value.ToString("n0")}";
+        pressLerpText.text = $"Press: {pressLerpPressureSlider.value.ToString("n1")}";
+        releaseLerpText.text = $"Release: {releaseLerpPressureSlider.value.ToString("n1")}";
     }
 
     void GetSliderRangeValues()
