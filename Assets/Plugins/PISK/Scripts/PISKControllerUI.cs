@@ -6,10 +6,22 @@ public class PISKControllerUI : MonoBehaviour
 {
     [SerializeField] private Slider pressureSlider;
     [SerializeField] private TextMeshProUGUI pressureValueText;
+    [SerializeField] private Slider pressLerpPressureSlider;
+    [SerializeField] private TextMeshProUGUI pressLerpText;
+    [SerializeField] private Slider releaseLerpPressureSlider;
+    [SerializeField] private TextMeshProUGUI releaseLerpText;
 
     void Start()
     {
         GetSliderRangeValues();
+        InitializeLerpSliders();
+        AddSliderListeners();
+    }
+
+    void InitializeLerpSliders()
+    {
+        pressLerpPressureSlider.value = PISKController.Instance.PressLerpSpeed;
+        releaseLerpPressureSlider.value = PISKController.Instance.ReleaseLerpSpeed;
     }
 
     void FixedUpdate()
@@ -17,12 +29,28 @@ public class PISKControllerUI : MonoBehaviour
         float pressure = PISKController.Instance.Pressure;
 
         pressureSlider.value = pressure;
-        pressureValueText.text = pressure.ToString("n0");
+
+        pressureValueText.text = $"Pressure: {pressure.ToString("n0")}";
+        pressLerpText.text = $"Press: {pressLerpPressureSlider.value.ToString("n0")}";
+        releaseLerpText.text = $"Release: {releaseLerpPressureSlider.value.ToString("n0")}";
     }
 
     void GetSliderRangeValues()
     {
         pressureSlider.minValue = PISKController.Instance.MinPressure;
         pressureSlider.maxValue = PISKController.Instance.MaxPressure;
+    }
+
+    void AddSliderListeners()
+    {
+        pressLerpPressureSlider.onValueChanged.AddListener((value) =>
+        {
+            PISKController.Instance.SetPressLerpSpeed(value);
+        });
+
+        releaseLerpPressureSlider.onValueChanged.AddListener((value) =>
+        {
+            PISKController.Instance.SetReleaseLerpSpeed(value);
+        });
     }
 }
