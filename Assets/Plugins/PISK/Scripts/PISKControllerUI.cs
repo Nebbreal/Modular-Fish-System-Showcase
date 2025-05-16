@@ -4,6 +4,7 @@ using TMPro;
 
 public class PISKControllerUI : MonoBehaviour
 {
+    [SerializeField] private GameObject panel;
     [SerializeField] private Slider pressureSlider;
     [SerializeField] private TextMeshProUGUI pressureValueText;
     [SerializeField] private Slider pressLerpPressureSlider;
@@ -13,12 +14,16 @@ public class PISKControllerUI : MonoBehaviour
     [SerializeField] private Slider LerpThresholdSlider;
     [SerializeField] private TextMeshProUGUI LerpThresholdText;
     [SerializeField] private Toggle ShowPressureDecimalsToggle;
+    [SerializeField] private TMP_Dropdown PositionDropdown;
+    private RectTransform panelRect;
 
     void Start()
     {
         GetSliderRangeValues();
         InitializeLerpSliders();
         AddSliderListeners();
+        panelRect = panel.GetComponent<RectTransform>();
+        UpdatePanelPosition(PositionDropdown.value);
     }
 
     void InitializeLerpSliders()
@@ -78,5 +83,34 @@ public class PISKControllerUI : MonoBehaviour
             pressLerpPressureSlider.minValue = rounded;
             releaseLerpPressureSlider.minValue = rounded;
         });
+    }
+
+    private void SetAnchor(RectTransform rectTransform, Vector2 anchor)
+    {
+        rectTransform.anchorMin = anchor;
+        rectTransform.anchorMax = anchor;
+        rectTransform.pivot = anchor;
+        rectTransform.anchoredPosition = Vector2.zero;
+    }
+
+    public void UpdatePanelPosition(int index)
+    {
+        RectTransform rectTransform = panel.GetComponent<RectTransform>();
+
+        switch (index)
+        {
+            case 0: // Bottom Right
+                SetAnchor(rectTransform, new Vector2(1, 0));
+                break;
+            case 1: // Bottom Left
+                SetAnchor(rectTransform, new Vector2(0, 0));
+                break;
+            case 2: // Top Right
+                SetAnchor(rectTransform, new Vector2(1, 1));
+                break;
+            case 3: // Top Left
+                SetAnchor(rectTransform, new Vector2(0, 1));
+                break;
+        }
     }
 }

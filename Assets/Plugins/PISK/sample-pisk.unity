@@ -2497,7 +2497,19 @@ MonoBehaviour:
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1185234864}
+        m_TargetAssemblyTypeName: PISKControllerUI, Assembly-CSharp-firstpass
+        m_MethodName: UpdatePanelPosition
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &949770773
 MonoBehaviour:
@@ -2632,7 +2644,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.0627451}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.2509804}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.5019608}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.015686275}
     m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3006,6 +3018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d67c5c350777424f957889d3eb91621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 1725628920}
   pressureSlider: {fileID: 924000184}
   pressureValueText: {fileID: 2014256711}
   pressLerpPressureSlider: {fileID: 1492945750}
@@ -3015,6 +3028,7 @@ MonoBehaviour:
   LerpThresholdSlider: {fileID: 1318066770}
   LerpThresholdText: {fileID: 1667170636}
   ShowPressureDecimalsToggle: {fileID: 407423702}
+  PositionDropdown: {fileID: 949770772}
 --- !u!1 &1206817443
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,9 +4629,9 @@ RectTransform:
   - {fileID: 1375069118}
   m_Father: {fileID: 1599941255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 165}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -200, y: 320}
   m_SizeDelta: {x: 400, y: 320}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1725628922
