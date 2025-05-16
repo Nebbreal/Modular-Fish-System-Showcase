@@ -5,6 +5,7 @@ using TMPro;
 public class PISKControllerUI : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject content;
     [SerializeField] private Slider pressureSlider;
     [SerializeField] private TextMeshProUGUI pressureValueText;
     [SerializeField] private Slider pressLerpPressureSlider;
@@ -15,7 +16,13 @@ public class PISKControllerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI LerpThresholdText;
     [SerializeField] private Toggle ShowPressureDecimalsToggle;
     [SerializeField] private TMP_Dropdown PositionDropdown;
+    [SerializeField] private Button showHidePanelToggle;
+    [SerializeField] private TextMeshProUGUI showHidePanelToggleText;
     private RectTransform panelRect;
+    private Vector2 expandedSize = new Vector2(400, 255);
+    private Vector2 collapsedSize = new Vector2(45, 45);
+    private bool isExpanded = true;
+
 
     void Start()
     {
@@ -24,6 +31,8 @@ public class PISKControllerUI : MonoBehaviour
         AddSliderListeners();
         panelRect = panel.GetComponent<RectTransform>();
         UpdatePanelPosition(PositionDropdown.value);
+        showHidePanelToggle.onClick.AddListener(TogglePanelSize);
+
     }
 
     void InitializeLerpSliders()
@@ -111,6 +120,24 @@ public class PISKControllerUI : MonoBehaviour
             case 3: // Top Left
                 SetAnchor(rectTransform, new Vector2(0, 1));
                 break;
+        }
+    }
+
+    private void TogglePanelSize()
+    {
+        isExpanded = !isExpanded;
+
+        if (isExpanded)
+        {
+            panelRect.sizeDelta = expandedSize;
+            content.SetActive(true);
+            showHidePanelToggleText.text = "-";
+        }
+        else
+        {
+            panelRect.sizeDelta = collapsedSize;
+            content.SetActive(false);
+            showHidePanelToggleText.text = "+";
         }
     }
 }

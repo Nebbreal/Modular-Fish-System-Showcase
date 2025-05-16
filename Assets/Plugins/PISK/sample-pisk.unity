@@ -1577,19 +1577,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561807867}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1393430427}
-  m_Father: {fileID: 2036815930}
+  m_Father: {fileID: 1725628921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -10, y: -10.5}
   m_SizeDelta: {x: 25, y: 25}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &561807869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3140,6 +3140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1725628920}
+  content: {fileID: 1375069117}
   pressureSlider: {fileID: 924000184}
   pressureValueText: {fileID: 2014256711}
   pressLerpPressureSlider: {fileID: 1492945750}
@@ -3150,6 +3151,8 @@ MonoBehaviour:
   LerpThresholdText: {fileID: 1667170636}
   ShowPressureDecimalsToggle: {fileID: 407423702}
   PositionDropdown: {fileID: 949770772}
+  showHidePanelToggle: {fileID: 561807869}
+  showHidePanelToggleText: {fileID: 1393430428}
 --- !u!1 &1206817443
 GameObject:
   m_ObjectHideFlags: 0
@@ -3904,8 +3907,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5021,6 +5024,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1375069118}
+  - {fileID: 561807868}
   m_Father: {fileID: 1599941255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
@@ -5434,7 +5438,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1228888997}
-  - {fileID: 561807868}
   m_Father: {fileID: 1375069118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
