@@ -2129,7 +2129,7 @@ MonoBehaviour:
   releaseLerpText: {fileID: 1672984421}
   LerpThresholdSlider: {fileID: 1318066770}
   LerpThresholdText: {fileID: 1667170636}
-  ShowPressureDecimalToggle: {fileID: 407423702}
+  ShowPressureDecimalsToggle: {fileID: 407423702}
 --- !u!1 &1206817443
 GameObject:
   m_ObjectHideFlags: 0
