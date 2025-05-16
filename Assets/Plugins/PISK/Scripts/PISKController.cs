@@ -32,44 +32,44 @@ public class PISKController : MonoBehaviour
         Instance = this;
     }
 
-void Update()
-{
-    bool spacePressed = Keyboard.current?.spaceKey?.isPressed ?? false;
-
-    if (spacePressedLastFrame && !spacePressed)
+    void Update()
     {
-        isCooldownActive = true;
-        cooldownTimer = LerpCooldown;
-    }
+        bool spacePressed = Keyboard.current?.spaceKey?.isPressed ?? false;
 
-    if (isCooldownActive)
-    {
-        cooldownTimer -= Time.deltaTime * 1000f;
-        if (cooldownTimer <= 0f)
+        if (spacePressedLastFrame && !spacePressed)
         {
-            isCooldownActive = false;
+            isCooldownActive = true;
+            cooldownTimer = LerpCooldown;
         }
-    }
 
-    if (spacePressed)
-    {
-        targetPressure = MaxPressure;
-    }
-    else if (!isCooldownActive)
-    {
-        targetPressure = MinPressure;
-    }
-    else
-    {
-        targetPressure = Pressure;
-    }
+        if (isCooldownActive)
+        {
+            cooldownTimer -= Time.deltaTime * 1000f;
+            if (cooldownTimer <= 0f)
+            {
+                isCooldownActive = false;
+            }
+        }
 
-    float lerpSpeed = spacePressed ? PressLerpSpeed : ReleaseLerpSpeed;
-    float rawPressure = Mathf.Lerp(Pressure, targetPressure, lerpSpeed * Time.deltaTime);
-    Pressure = SmartRound(rawPressure, targetPressure);
+        if (spacePressed)
+        {
+            targetPressure = MaxPressure;
+        }
+        else if (!isCooldownActive)
+        {
+            targetPressure = MinPressure;
+        }
+        else
+        {
+            targetPressure = Pressure;
+        }
 
-    spacePressedLastFrame = spacePressed;
-}
+        float lerpSpeed = spacePressed ? PressLerpSpeed : ReleaseLerpSpeed;
+        float rawPressure = Mathf.Lerp(Pressure, targetPressure, lerpSpeed * Time.deltaTime);
+        Pressure = SmartRound(rawPressure, targetPressure);
+
+        spacePressedLastFrame = spacePressed;
+    }
 
 
     void AdjustPressure(float amount)
@@ -92,6 +92,11 @@ void Update()
         LerpSpeedThreshold = amount;
     }
 
+    public void SetLerpCooldown(float amount)
+    {
+        LerpCooldown = amount;
+    }
+
     private float SmartRound(float value, float target)
     {
         if (Mathf.Abs(value - target) <= LerpSpeedThreshold)
@@ -101,4 +106,5 @@ void Update()
 
         return Mathf.Round(value * 100f) / 100f;
     }
+
 }

@@ -18,6 +18,9 @@ public class PISKControllerUI : MonoBehaviour
     [SerializeField] private TMP_Dropdown PositionDropdown;
     [SerializeField] private Button showHidePanelToggle;
     [SerializeField] private TextMeshProUGUI showHidePanelToggleText;
+    [SerializeField] private Slider LerpCooldownSlider;
+    [SerializeField] private TextMeshProUGUI LerpCooldownText;
+
     private RectTransform panelRect;
     private Vector2 expandedSize = new Vector2(400, 255);
     private Vector2 collapsedSize = new Vector2(45, 45);
@@ -91,6 +94,13 @@ public class PISKControllerUI : MonoBehaviour
 
             pressLerpPressureSlider.minValue = rounded;
             releaseLerpPressureSlider.minValue = rounded;
+        });
+
+        LerpCooldownSlider.onValueChanged.AddListener((value) =>
+        {
+            float newValue = value * 10;
+            PISKController.Instance.SetLerpCooldown(newValue);
+            LerpCooldownText.text =  $"Cooldown: {newValue}";
         });
     }
 
