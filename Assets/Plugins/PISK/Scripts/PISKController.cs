@@ -14,9 +14,12 @@ public class PISKController : MonoBehaviour
     [field: SerializeField] public float PressLerpSpeed = 4f;
     [field: SerializeField] public float ReleaseLerpSpeed = 8f;
     [field: SerializeField] public float LerpSpeedThreshold { get; private set; } = 0.25f;
-
+    [field: SerializeField] public float LerpCooldown { get; private set; } = 100f;
 
     private float targetPressure;
+    private bool spacePressedLastFrame = false;
+    private bool isCooldownActive = false;
+    private float cooldownTimer = 0f;
 
     void Awake()
     {
@@ -29,16 +32,45 @@ public class PISKController : MonoBehaviour
         Instance = this;
     }
 
-    void Update()
+void Update()
+{
+    bool spacePressed = Keyboard.current?.spaceKey?.isPressed ?? false;
+
+    if (spacePressedLastFrame && !spacePressed)
     {
-        bool spacePressed = Keyboard.current?.spaceKey?.isPressed ?? false;
-
-        targetPressure = spacePressed ? MaxPressure : MinPressure;
-        float lerpSpeed = spacePressed ? PressLerpSpeed : ReleaseLerpSpeed;
-
-        float rawPressure = Mathf.Lerp(Pressure, targetPressure, lerpSpeed * Time.deltaTime);
-        Pressure = SmartRound(rawPressure, targetPressure);
+        isCooldownActive = true;
+        cooldownTimer = LerpCooldown;
     }
+
+    if (isCooldownActive)
+    {
+        cooldownTimer -= Time.deltaTime * 1000f;
+        if (cooldownTimer <= 0f)
+        {
+            isCooldownActive = false;
+        }
+    }
+
+    if (spacePressed)
+    {
+        targetPressure = MaxPressure;
+    }
+    else if (!isCooldownActive)
+    {
+        targetPressure = MinPressure;
+    }
+    else
+    {
+        targetPressure = Pressure;
+    }
+
+    float lerpSpeed = spacePressed ? PressLerpSpeed : ReleaseLerpSpeed;
+    float rawPressure = Mathf.Lerp(Pressure, targetPressure, lerpSpeed * Time.deltaTime);
+    Pressure = SmartRound(rawPressure, targetPressure);
+
+    spacePressedLastFrame = spacePressed;
+}
+
 
     void AdjustPressure(float amount)
     {
