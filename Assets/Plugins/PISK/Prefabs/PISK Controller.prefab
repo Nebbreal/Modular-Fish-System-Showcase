@@ -3516,7 +3516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: panel position
+  m_text: Panel Position
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a2fd60dbdfeb364a9fac5889e27f7c7, type: 2}
   m_sharedMaterial: {fileID: -7199283860763969816, guid: 3a2fd60dbdfeb364a9fac5889e27f7c7, type: 2}
@@ -6298,7 +6298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: UI Scale
+  m_text: Panel Scale
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a2fd60dbdfeb364a9fac5889e27f7c7, type: 2}
   m_sharedMaterial: {fileID: -7199283860763969816, guid: 3a2fd60dbdfeb364a9fac5889e27f7c7, type: 2}
