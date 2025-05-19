@@ -1418,15 +1418,15 @@ MonoBehaviour:
   pressLerpText: {fileID: 8133822960933668827}
   releaseLerpPressureSlider: {fileID: 5808549151980836695}
   releaseLerpText: {fileID: 7165573059494442149}
-  LerpThresholdSlider: {fileID: 6137760752074504617}
-  LerpThresholdText: {fileID: 6202051161487800978}
-  ShowPressureDecimalsToggle: {fileID: 2368270680603580258}
-  PositionDropdown: {fileID: 2084732721364524491}
+  lerpThresholdSlider: {fileID: 6137760752074504617}
+  lerpThresholdText: {fileID: 6202051161487800978}
+  showPressureDecimalsToggle: {fileID: 2368270680603580258}
+  positionDropdown: {fileID: 2084732721364524491}
   scaleDropdown: {fileID: 5005190373550985805}
   showHidePanelToggle: {fileID: 2728905861958655846}
   showHidePanelToggleText: {fileID: 3201240355659658072}
-  LerpCooldownSlider: {fileID: 7224392173251482845}
-  LerpCooldownText: {fileID: 391647275070393636}
+  lerpCooldownSlider: {fileID: 7224392173251482845}
+  lerpCooldownText: {fileID: 391647275070393636}
 --- !u!1 &2593553925823799412
 GameObject:
   m_ObjectHideFlags: 0

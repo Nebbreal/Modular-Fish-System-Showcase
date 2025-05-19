@@ -12,21 +12,20 @@ public class PISKControllerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pressLerpText;
     [SerializeField] private Slider releaseLerpPressureSlider;
     [SerializeField] private TextMeshProUGUI releaseLerpText;
-    [SerializeField] private Slider LerpThresholdSlider;
-    [SerializeField] private TextMeshProUGUI LerpThresholdText;
-    [SerializeField] private Toggle ShowPressureDecimalsToggle;
-    [SerializeField] private TMP_Dropdown PositionDropdown;
+    [SerializeField] private Slider lerpThresholdSlider;
+    [SerializeField] private TextMeshProUGUI lerpThresholdText;
+    [SerializeField] private Toggle showPressureDecimalsToggle;
+    [SerializeField] private TMP_Dropdown positionDropdown;
     [SerializeField] private TMP_Dropdown scaleDropdown;
     [SerializeField] private Button showHidePanelToggle;
     [SerializeField] private TextMeshProUGUI showHidePanelToggleText;
-    [SerializeField] private Slider LerpCooldownSlider;
-    [SerializeField] private TextMeshProUGUI LerpCooldownText;
+    [SerializeField] private Slider lerpCooldownSlider;
+    [SerializeField] private TextMeshProUGUI lerpCooldownText;
 
     private RectTransform panelRect;
     private Vector2 expandedSize = new Vector2(400, 295);
     private Vector2 collapsedSize = new Vector2(45, 45);
     private bool isExpanded = true;
-
 
     void Start()
     {
@@ -34,7 +33,7 @@ public class PISKControllerUI : MonoBehaviour
         InitializeLerpSliders();
         AddSliderListeners();
         panelRect = panel.GetComponent<RectTransform>();
-        UpdatePanelPosition(PositionDropdown.value);
+        UpdatePanelPosition(positionDropdown.value);
         UpdatePanelScale(scaleDropdown.value);
         showHidePanelToggle.onClick.AddListener(TogglePanelSize);
 
@@ -48,7 +47,7 @@ public class PISKControllerUI : MonoBehaviour
 
         pressLerpPressureSlider.value = pressLerp;
         releaseLerpPressureSlider.value = releaseLerp;
-        LerpThresholdSlider.value = threshold;
+        lerpThresholdSlider.value = threshold;
 
         pressLerpPressureSlider.minValue = threshold;
         releaseLerpPressureSlider.minValue = threshold;
@@ -60,12 +59,12 @@ public class PISKControllerUI : MonoBehaviour
 
         pressureSlider.value = pressure;
 
-        string format = ShowPressureDecimalsToggle.isOn ? "n2" : "n0";
+        string format = showPressureDecimalsToggle.isOn ? "n2" : "n0";
         pressureValueText.text = $"Pressure: {pressure.ToString(format)}";
 
         pressLerpText.text = $"Press: {pressLerpPressureSlider.value.ToString("n2")}";
         releaseLerpText.text = $"Release: {releaseLerpPressureSlider.value.ToString("n2")}";
-        LerpThresholdText.text = $"Threshold: {LerpThresholdSlider.value.ToString("n3")}";
+        lerpThresholdText.text = $"Threshold: {lerpThresholdSlider.value.ToString("n3")}";
     }
 
     void GetSliderRangeValues()
@@ -88,21 +87,21 @@ public class PISKControllerUI : MonoBehaviour
             PISKController.Instance.SetReleaseLerpSpeed(rounded);
         });
 
-        LerpThresholdSlider.onValueChanged.AddListener((value) =>
+        lerpThresholdSlider.onValueChanged.AddListener((value) =>
         {
             float rounded = Mathf.Round(value * 1000f) / 1000f;
-            LerpThresholdText.text = $"Threshold: {rounded}";
+            lerpThresholdText.text = $"Threshold: {rounded}";
             PISKController.Instance.SetLerpSpeedThreshold(rounded);
 
             pressLerpPressureSlider.minValue = rounded;
             releaseLerpPressureSlider.minValue = rounded;
         });
 
-        LerpCooldownSlider.onValueChanged.AddListener((value) =>
+        lerpCooldownSlider.onValueChanged.AddListener((value) =>
         {
             float newValue = value * 10;
             PISKController.Instance.SetLerpCooldown(newValue);
-            LerpCooldownText.text =  $"Cooldown: {newValue}";
+            lerpCooldownText.text =  $"Cooldown: {newValue}";
         });
     }
 
