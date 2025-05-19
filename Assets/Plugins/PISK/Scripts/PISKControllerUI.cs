@@ -16,13 +16,14 @@ public class PISKControllerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI LerpThresholdText;
     [SerializeField] private Toggle ShowPressureDecimalsToggle;
     [SerializeField] private TMP_Dropdown PositionDropdown;
+    [SerializeField] private TMP_Dropdown scaleDropdown;
     [SerializeField] private Button showHidePanelToggle;
     [SerializeField] private TextMeshProUGUI showHidePanelToggleText;
     [SerializeField] private Slider LerpCooldownSlider;
     [SerializeField] private TextMeshProUGUI LerpCooldownText;
 
     private RectTransform panelRect;
-    private Vector2 expandedSize = new Vector2(400, 255);
+    private Vector2 expandedSize = new Vector2(400, 295);
     private Vector2 collapsedSize = new Vector2(45, 45);
     private bool isExpanded = true;
 
@@ -34,6 +35,7 @@ public class PISKControllerUI : MonoBehaviour
         AddSliderListeners();
         panelRect = panel.GetComponent<RectTransform>();
         UpdatePanelPosition(PositionDropdown.value);
+        UpdatePanelScale(scaleDropdown.value);
         showHidePanelToggle.onClick.AddListener(TogglePanelSize);
 
     }
@@ -129,6 +131,33 @@ public class PISKControllerUI : MonoBehaviour
                 break;
             case 3: // Top Left
                 SetAnchor(rectTransform, new Vector2(0, 1));
+                break;
+        }
+    }
+
+    private void SetScale(float scale)
+    {
+        RectTransform rectTransform = panel.GetComponent<RectTransform>();
+        rectTransform.localScale = new Vector3(scale, scale, scale);
+    }
+
+    public void UpdatePanelScale(int index)
+    {
+        RectTransform rectTransform = panel.GetComponent<RectTransform>();
+
+        switch (index)
+        {
+            case 0: // 75%
+                SetScale(0.75f);
+                break;
+            case 1: // 100%
+                SetScale(1f);
+                break;
+            case 2: // 150%
+                SetScale(1.5f);
+                break;
+            case 3: // 200%
+                SetScale(2f);
                 break;
         }
     }
