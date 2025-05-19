@@ -1,3 +1,7 @@
+// Part of the Pillo Input Simulation Kit (PISK)
+// This is an example script and can be safely removed or modified.
+// Support, Contact & Suggestions → https://stewbyte.com
+
 using UnityEngine;
 
 public class ExampleScript : MonoBehaviour

@@ -1,3 +1,6 @@
+// Part of the Pillo Input Simulation Kit (PISK)
+// Support, Contact & Suggestions → https://stewbyte.com
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
