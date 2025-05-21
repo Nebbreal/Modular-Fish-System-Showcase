@@ -1,17 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class FishingRodController : MonoBehaviour
 {
     [SerializeField] private float maxAngle = 10f;
     [SerializeField] private FishingRodStringController fishingRodString;
     float pressure;
-    private RectMask2D mask;
-
-    void Start()
-    {
-        mask = GetComponent<RectMask2D>();
-    }
 
     void Update()
     {
