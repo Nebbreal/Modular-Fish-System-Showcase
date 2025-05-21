@@ -18,13 +18,19 @@ public class FishGenerator : MonoBehaviour
     [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored part for the fish. 0 = 0% chance, 1 = 100% chance")]
     private float shiftableColorChance;
 
-    public GameObject GenerateFish()
+    public GameObject GenerateFish(bool randomizeBodyColor = true)
     {
         //Get a random FishBase
         int randomIndex = Random.Range(0, fishBases.Length);
         GameObject fish = Instantiate(fishBases[randomIndex]);
         
-        SpriteRenderer[] fishPartRenderers = fish.GetComponentsInChildren<SpriteRenderer>();
+        Transform fishTransform = fish.transform;
+        SpriteRenderer fishRenderer = fish.GetComponent<SpriteRenderer>();
+        
+        SetRendererToRandomColor(fishRenderer);
+        
+        //Get the SpriteRenderers from only the direct child objects
+        SpriteRenderer[] fishPartRenderers = GetDirectChildSpriteRenderers(fishTransform);
 
         //Assign a random sprite to each fish part
         foreach (SpriteRenderer fishPartRenderer in fishPartRenderers)
@@ -32,13 +38,13 @@ public class FishGenerator : MonoBehaviour
             GameObject partObject = fishPartRenderer.gameObject;
             
             float randomValue = Random.Range(0f, 1f);
-            Debug.Log(randomValue);
+            bool isColorShiftable = randomValue <= shiftableColorChance;
             
-            Sprite[] sprites = GetSpritesForPart(partObject.tag, randomValue <= shiftableColorChance);
+            Sprite[] sprites = GetSpritesForPart(partObject.tag, isColorShiftable);
 
             if (sprites != null && sprites.Length > 0)
             {
-                SetPartToRandomSprite(fishPartRenderer, sprites);
+                SetRendererToRandomSprite(fishPartRenderer, sprites, isColorShiftable);
             }
             else
             {
@@ -49,6 +55,7 @@ public class FishGenerator : MonoBehaviour
         return fish;
     }
 
+    #region Part modification
     private Sprite[] GetSpritesForPart(string spriteTag, bool useShiftable)
     {
         switch (spriteTag)
@@ -62,11 +69,39 @@ public class FishGenerator : MonoBehaviour
         }
     }
     
-    private void SetPartToRandomSprite(SpriteRenderer fishPartRenderer, Sprite[] sprites)
+    private void SetRendererToRandomSprite(SpriteRenderer spriteRenderer, Sprite[] sprites, bool shiftColor = false)
     {
         int randomSpriteValue = Random.Range(0, sprites.Length);
         Sprite selectedSprite = sprites[randomSpriteValue];
+
+        if (shiftColor)
+        {
+            SetRendererToRandomColor(spriteRenderer);
+        }
         
-        fishPartRenderer.sprite = selectedSprite;
+        spriteRenderer.sprite = selectedSprite;
     }
+
+    private static void SetRendererToRandomColor(SpriteRenderer fishPartRenderer)
+    {
+        float randomRedValue = Random.Range(0f, 1f);
+        float randomGreenValue = Random.Range(0f, 1f);
+        float randomBlueValue = Random.Range(0f, 1f);
+            
+        Color newColor = new Color(randomRedValue, randomGreenValue, randomBlueValue);
+            
+        fishPartRenderer.color = newColor;
+    }
+    #endregion
+
+    #region Utility
+    private static SpriteRenderer[] GetDirectChildSpriteRenderers(Transform fishTransform)
+    {
+        SpriteRenderer[] fishPartRenderers = new SpriteRenderer[fishTransform.childCount];
+        for (int i = 0; i < fishPartRenderers.Length; i++)
+            fishPartRenderers[i] = fishTransform.GetChild(i).GetComponent<SpriteRenderer>();
+        return fishPartRenderers;
+    }
+    #endregion
+    
 }
