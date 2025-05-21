@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3715873762918868310}
   m_Layer: 0
   m_Name: BottomFin
-  m_TagString: Untagged
+  m_TagString: BottomFin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 8171826099629845112}
   m_Layer: 0
   m_Name: TopFin
-  m_TagString: Untagged
+  m_TagString: TopFin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
