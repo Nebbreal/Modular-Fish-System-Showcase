@@ -28,6 +28,7 @@ public class FishingRodController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
             fishingRodString.RotateDownward();
+            fishingRodString.MoveDownwardWithPressure(pressure);
         }
     }
 }
