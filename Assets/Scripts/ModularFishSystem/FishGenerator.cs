@@ -9,10 +9,18 @@ public class FishGenerator : MonoBehaviour
     [Header("Fish parts")]
     [SerializeField]
     private GameObject[] fishBases;
+    
     [SerializeField] 
-    private Sprite[] shiftableTopFinSprites, shiftableBottomFinSprites, setTopFinSprites, setBottomFinSprites;
-    private const string TopFinTag = "TopFin"; //Tag serialization seems to be missing from unity so this is a band aid for now
-    private const string BottomFinTag = "BottomFin"; //Tag serialization seems to be missing from unity so this is a band aid for now
+    private Sprite[] shiftableTopFinSprites, setTopFinSprites,
+        shiftableBottomFinSprites, setBottomFinSprites, 
+        setEyeSprites, 
+        shiftableMouthSprites, setMouthSprites, 
+        shiftableRearSprites, setRearSprites;
+    private const string TopFinTag = "TopFin"; //Tag serialization seems to be missing from unity so this is a band aid for now, this should be done with classes later
+    private const string BottomFinTag = "BottomFin"; 
+    private const string EyeTag = "Eye";
+    private const string MouthTag = "Mouth";
+    private const string RearFinTag = "RearFin";
     
     [Header("Configuration")]
     [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored part for the fish. 0 = 0% chance, 1 = 100% chance")]
@@ -23,6 +31,7 @@ public class FishGenerator : MonoBehaviour
         //Get a random FishBase
         int randomIndex = Random.Range(0, fishBases.Length);
         GameObject fish = Instantiate(fishBases[randomIndex]);
+        fish.SetActive(false);
         
         Transform fishTransform = fish.transform;
         SpriteRenderer fishRenderer = fish.GetComponent<SpriteRenderer>();
@@ -38,7 +47,9 @@ public class FishGenerator : MonoBehaviour
             GameObject partObject = fishPartRenderer.gameObject;
             
             float randomValue = Random.Range(0f, 1f);
-            bool isColorShiftable = randomValue <= shiftableColorChance;
+            
+            //Exception made for eye's due to them looking unnatural with a random color
+            bool isColorShiftable = randomValue <= shiftableColorChance && !partObject.CompareTag(EyeTag);
             
             Sprite[] sprites = GetSpritesForPart(partObject.tag, isColorShiftable);
 
@@ -64,6 +75,12 @@ public class FishGenerator : MonoBehaviour
                 return useShiftable ? shiftableTopFinSprites : setTopFinSprites;
             case BottomFinTag:
                 return useShiftable ? shiftableBottomFinSprites : setBottomFinSprites;
+            case EyeTag:
+                return setEyeSprites;
+            case MouthTag:
+                return useShiftable ? shiftableMouthSprites : setMouthSprites;
+            case RearFinTag:
+                return useShiftable ? shiftableRearSprites : setRearSprites;
             default:
                 return null;
         }

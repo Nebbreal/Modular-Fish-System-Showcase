@@ -6,6 +6,9 @@ TagManager:
   tags:
   - TopFin
   - BottomFin
+  - Eye
+  - Mouth
+  - RearFin
   layers:
   - Default
   - TransparentFX
@@ -49,7 +52,7 @@ TagManager:
   - name: Fish body
     uniqueID: 1005104163
     locked: 0
-  - name: Fish face
+  - name: Fish decoration
     uniqueID: 67935731
     locked: 0
   m_RenderingLayers:
