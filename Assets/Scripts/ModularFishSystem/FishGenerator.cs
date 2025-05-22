@@ -42,7 +42,7 @@ public class FishGenerator : MonoBehaviour
         }
         
         //Get the SpriteRenderers from only the direct child objects
-        SpriteRenderer[] fishPartRenderers = GetDirectChildSpriteRenderers(fishTransform);
+        List<SpriteRenderer> fishPartRenderers = GetDirectChildSpriteRenderers(fishTransform);
 
         //Assign a random sprite to each fish part
         foreach (SpriteRenderer fishPartRenderer in fishPartRenderers)
@@ -111,11 +111,17 @@ public class FishGenerator : MonoBehaviour
     #endregion
 
     #region Utility
-    private static SpriteRenderer[] GetDirectChildSpriteRenderers(Transform fishTransform)
+    private static List<SpriteRenderer> GetDirectChildSpriteRenderers(Transform fishTransform)
     {
-        SpriteRenderer[] fishPartRenderers = new SpriteRenderer[fishTransform.childCount];
-        for (int i = 0; i < fishPartRenderers.Length; i++)
-            fishPartRenderers[i] = fishTransform.GetChild(i).GetComponent<SpriteRenderer>();
+        List<SpriteRenderer> fishPartRenderers = new ();
+        for (int i = 0; i < fishPartRenderers.Count; i++)
+        {
+            if (fishTransform.GetChild(i).TryGetComponent(out SpriteRenderer fishPartRenderer))
+            {
+                fishPartRenderers.Add(fishPartRenderer);
+            };
+        }
+        
         return fishPartRenderers;
     }
     #endregion
