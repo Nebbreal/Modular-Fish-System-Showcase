@@ -118,9 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressureToCatch: 95
   pressureToReelIn: 50
-  pressureToHidePopUp: 5
-  popUpCooldown: 1000
-  popUpScreen: {fileID: 2963202670920601919}
+  popUpScreen: {fileID: 3267476622045021965}
 --- !u!1001 &1487224817620478537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -324,11 +322,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81553e38f0fda9d44b8c75366a0e5235, type: 3}
---- !u!1 &2963202670920601919 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 880311906330581587, guid: 81553e38f0fda9d44b8c75366a0e5235, type: 3}
+--- !u!114 &3267476622045021965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 608125106252975201, guid: 81553e38f0fda9d44b8c75366a0e5235, type: 3}
   m_PrefabInstance: {fileID: 2677414317545458540}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c74300838ec81468f01402f9b6d699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5424194665467330038 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7957449795091052186, guid: 81553e38f0fda9d44b8c75366a0e5235, type: 3}
