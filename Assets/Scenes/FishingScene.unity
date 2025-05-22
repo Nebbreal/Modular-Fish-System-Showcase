@@ -2035,6 +2035,10 @@ PrefabInstance:
       propertyPath: m_Softness.y
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 8662156878427464069, guid: 63d8447d021033b45a45af83da222598, type: 3}
+      propertyPath: stringLength
+      value: 240
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
