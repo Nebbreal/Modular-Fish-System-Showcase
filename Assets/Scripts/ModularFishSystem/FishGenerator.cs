@@ -30,13 +30,16 @@ public class FishGenerator : MonoBehaviour
     {
         //Get a random FishBase
         int randomIndex = Random.Range(0, fishBases.Length);
+        
         GameObject fish = Instantiate(fishBases[randomIndex]);
         fish.SetActive(false);
-        
         Transform fishTransform = fish.transform;
         SpriteRenderer fishRenderer = fish.GetComponent<SpriteRenderer>();
-        
-        SetRendererToRandomColor(fishRenderer);
+
+        if (randomizeBodyColor)
+        {
+            SetRendererToRandomColor(fishRenderer);
+        }
         
         //Get the SpriteRenderers from only the direct child objects
         SpriteRenderer[] fishPartRenderers = GetDirectChildSpriteRenderers(fishTransform);
@@ -45,12 +48,9 @@ public class FishGenerator : MonoBehaviour
         foreach (SpriteRenderer fishPartRenderer in fishPartRenderers)
         {
             GameObject partObject = fishPartRenderer.gameObject;
-            
             float randomValue = Random.Range(0f, 1f);
-            
             //Exception made for eye's due to them looking unnatural with a random color
             bool isColorShiftable = randomValue <= shiftableColorChance && !partObject.CompareTag(EyeTag);
-            
             Sprite[] sprites = GetSpritesForPart(partObject.tag, isColorShiftable);
 
             if (sprites != null && sprites.Length > 0)
@@ -106,7 +106,6 @@ public class FishGenerator : MonoBehaviour
         float randomBlueValue = Random.Range(0f, 1f);
             
         Color newColor = new Color(randomRedValue, randomGreenValue, randomBlueValue);
-            
         fishPartRenderer.color = newColor;
     }
     #endregion
@@ -120,5 +119,4 @@ public class FishGenerator : MonoBehaviour
         return fishPartRenderers;
     }
     #endregion
-    
 }
