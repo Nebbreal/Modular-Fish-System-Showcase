@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6526061429923259408}
   - component: {fileID: 6008101006176816007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BottomFin
   m_TagString: BottomFin
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2993548543417003912}
   - component: {fileID: 8980830395267052131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FishBase3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1065659446523610099}
   - component: {fileID: 6657914625198838263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye
   m_TagString: Eye
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6357540534116590327}
   - component: {fileID: 4172798765426579348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouth
   m_TagString: Mouth
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6853784970929989982}
   - component: {fileID: 4369485933661315558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rear
   m_TagString: RearFin
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8762364090798446771}
   - component: {fileID: 8918119880605168364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopFin
   m_TagString: TopFin
   m_Icon: {fileID: 0}

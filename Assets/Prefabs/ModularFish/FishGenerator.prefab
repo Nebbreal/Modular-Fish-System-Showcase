@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5584643357734432186}
   - component: {fileID: 7406556416668986636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FishGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishBases: []
   shiftableTopFinSprites: []
-  shiftableBottomFinSprites: []
   setTopFinSprites: []
+  shiftableBottomFinSprites: []
   setBottomFinSprites: []
+  setEyeSprites: []
+  shiftableMouthSprites: []
+  setMouthSprites: []
+  shiftableRearSprites: []
+  setRearSprites: []
   shiftableColorChance: 0
