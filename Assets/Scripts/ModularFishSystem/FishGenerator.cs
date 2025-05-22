@@ -114,7 +114,7 @@ public class FishGenerator : MonoBehaviour
     private static List<SpriteRenderer> GetDirectChildSpriteRenderers(Transform fishTransform)
     {
         List<SpriteRenderer> fishPartRenderers = new ();
-        for (int i = 0; i < fishPartRenderers.Count; i++)
+        for (int i = 0; i < fishTransform.childCount; i++)
         {
             if (fishTransform.GetChild(i).TryGetComponent(out SpriteRenderer fishPartRenderer))
             {
