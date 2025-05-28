@@ -28,17 +28,22 @@ public class FishGenerator : MonoBehaviour
 
     public GameObject GenerateFish(bool randomizeBodyColor = true)
     {
+        if (fishBases.Length == 0)
+        {
+            Debug.LogError("No fish found in FishBases");
+            return null;
+        }
+        
         //Get a random FishBase
         int randomIndex = Random.Range(0, fishBases.Length);
         
         GameObject fish = Instantiate(fishBases[randomIndex]);
         fish.SetActive(false);
         Transform fishTransform = fish.transform;
-        SpriteRenderer fishRenderer = fish.GetComponent<SpriteRenderer>();
-
-        if (randomizeBodyColor)
+        
+        if (randomizeBodyColor && fish.TryGetComponent(out SpriteRenderer fishBaseRenderer))
         {
-            SetRendererToRandomColor(fishRenderer);
+            SetRendererToRandomColor(fishBaseRenderer);
         }
         
         //Get the SpriteRenderers from only the direct child objects
