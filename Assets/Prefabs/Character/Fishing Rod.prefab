@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 9085947195455029967}
   - component: {fileID: 4898798947953190159}
   - component: {fileID: 7980375721018347981}
+  - component: {fileID: 8273665973597044764}
   m_Layer: 5
   m_Name: Fishing Rod
   m_TagString: Untagged
@@ -118,7 +119,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb10d1d4e64b0bb43aea8a17660309ba, type: 3}
+  m_Sprite: {fileID: -1226737266, guid: fb10d1d4e64b0bb43aea8a17660309ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -142,6 +143,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAngle: 20
   fishingRodString: {fileID: 8662156878427464069}
+--- !u!95 &8273665973597044764
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257652998926083228}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07ba3378adde73643878446be2c02af3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6811193089495978010
 GameObject:
   m_ObjectHideFlags: 0
