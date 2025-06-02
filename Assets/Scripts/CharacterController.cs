@@ -21,8 +21,10 @@ public class CharacterController : MonoBehaviour
         TryCatchFish();
         if (isPressedIn)
         {
-            GetInputControl(_inputControl);
+            SetTriggerPressure(_inputControl);
         }
+
+        Debug.Log(Gamepad.current.rightTrigger.ReadValue());
     }
 
     private void UpdatePressure()
@@ -61,9 +63,7 @@ public class CharacterController : MonoBehaviour
 
     public void test(InputAction.CallbackContext context)
     {
-        float value = context.ReadValue<float>();
-        pisk.SetPressure(value * 100);
-        Debug.Log(value);
+        Debug.Log("a");
         if (context.started)
         {
             _inputControl = context.control;
@@ -73,13 +73,17 @@ public class CharacterController : MonoBehaviour
         {
             isPressedIn = false;
         }
-
-        
-        
     }
 
-    private void GetInputControl(InputControl inputControl)
+    private void SetTriggerPressure(InputControl inputControl)
     {
         InputDevice inputDevice = inputControl.device;
+        if (inputDevice is Gamepad)
+        {
+            float triggerValue = Gamepad.current.rightTrigger.ReadValue();
+            pisk.SetPressure(triggerValue * 100);
+        }
+
+        
     }
 }
