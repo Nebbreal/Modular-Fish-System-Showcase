@@ -25,6 +25,10 @@ public class FishGenerator : MonoBehaviour
     [Header("Configuration")]
     [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored part for the fish. 0 = 0% chance, 1 = 100% chance")]
     private float shiftableColorChance;
+    [SerializeField, Range(0f, 1f), Tooltip("Minimum value for the randomly selected color")]
+    private float minimumValue;
+    [SerializeField, Range(0f, 1f), Tooltip("Minimum saturation value for the randomly selected color")]
+    private float minimumSaturation;
 
     public GameObject GenerateFish(bool randomizeBodyColor = true)
     {
@@ -104,13 +108,13 @@ public class FishGenerator : MonoBehaviour
         spriteRenderer.sprite = selectedSprite;
     }
 
-    private static void SetRendererToRandomColor(SpriteRenderer fishPartRenderer)
+    private void SetRendererToRandomColor(SpriteRenderer fishPartRenderer)
     {
-        float randomRedValue = Random.Range(0f, 1f);
-        float randomGreenValue = Random.Range(0f, 1f);
-        float randomBlueValue = Random.Range(0f, 1f);
-            
-        Color newColor = new Color(randomRedValue, randomGreenValue, randomBlueValue);
+        float randomHueValue = Random.Range(0f, 1f);
+        float randomSaturationValue = Random.Range(minimumSaturation, 1f);
+        float randomValue = Random.Range(minimumValue, 1f);
+        
+        Color newColor = Color.HSVToRGB(randomHueValue, randomSaturationValue, randomValue);
         fishPartRenderer.color = newColor;
     }
     #endregion
