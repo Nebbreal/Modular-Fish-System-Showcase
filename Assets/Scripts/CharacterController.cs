@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
@@ -7,14 +8,21 @@ public class CharacterController : MonoBehaviour
     [SerializeField] PopUpController popUpScreen;
     [SerializeField] private FishGenerator fishGenerator;
     [SerializeField] private Transform fishSpawnLocation;
+    [SerializeField] private PISKController pisk;
     private float pressure;
     private bool readyToReelIn = false;
+    private bool isPressedIn = false;
+    private InputControl _inputControl;
     GameObject generatedFish;
 
     void Update()
     {
         UpdatePressure();
         TryCatchFish();
+        if (isPressedIn)
+        {
+            GetInputControl(_inputControl);
+        }
     }
 
     private void UpdatePressure()
@@ -49,5 +57,29 @@ public class CharacterController : MonoBehaviour
             popUpScreen.gameObject.SetActive(true);
             readyToReelIn = false;
         }
+    }
+
+    public void test(InputAction.CallbackContext context)
+    {
+        float value = context.ReadValue<float>();
+        pisk.SetPressure(value * 100);
+        Debug.Log(value);
+        if (context.started)
+        {
+            _inputControl = context.control;
+            isPressedIn = true;
+        }
+        else if (context.canceled)
+        {
+            isPressedIn = false;
+        }
+
+        
+        
+    }
+
+    private void GetInputControl(InputControl inputControl)
+    {
+        InputDevice inputDevice = inputControl.device;
     }
 }
