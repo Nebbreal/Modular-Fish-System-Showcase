@@ -386,14 +386,10 @@ PrefabInstance:
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: 'fishBases.Array.data[3]'
       value: 
-      objectReference: {fileID: 3093792496056450985, guid: 84a6ab56953f8c34492009230a264e6f, type: 3}
+      objectReference: {fileID: 338808545586331884, guid: ba866658d0acea246b26b84a74cc72a7, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: setEyeSprites.Array.size
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
-      propertyPath: setMouthSprites.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: 'setEyeSprites.Array.data[0]'
@@ -412,16 +408,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
-      propertyPath: 'setMouthSprites.Array.data[0]'
-      value: 
-      objectReference: {fileID: 180403997, guid: 39040a6aff475094e8f37d578aefd31f, type: 3}
-    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: shiftableRearSprites.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: shiftableMouthSprites.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: shiftableTopFinSprites.Array.size
@@ -438,23 +430,15 @@ PrefabInstance:
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: 'shiftableMouthSprites.Array.data[0]'
       value: 
-      objectReference: {fileID: -1925015852, guid: 09bdaa1bb7c1e7649822363edc2f73ad, type: 3}
+      objectReference: {fileID: -1128690720, guid: afeee24de1381bd47ae083a515623ff5, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: 'shiftableMouthSprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 1134121269, guid: 09bdaa1bb7c1e7649822363edc2f73ad, type: 3}
+      objectReference: {fileID: -1449326881, guid: afeee24de1381bd47ae083a515623ff5, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: 'shiftableMouthSprites.Array.data[2]'
       value: 
-      objectReference: {fileID: 145405383, guid: 09bdaa1bb7c1e7649822363edc2f73ad, type: 3}
-    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
-      propertyPath: 'shiftableMouthSprites.Array.data[3]'
-      value: 
-      objectReference: {fileID: 778633872, guid: 09bdaa1bb7c1e7649822363edc2f73ad, type: 3}
-    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
-      propertyPath: 'shiftableMouthSprites.Array.data[4]'
-      value: 
-      objectReference: {fileID: 1979034929, guid: 09bdaa1bb7c1e7649822363edc2f73ad, type: 3}
+      objectReference: {fileID: 102371615, guid: afeee24de1381bd47ae083a515623ff5, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: shiftableBottomFinSprites.Array.size
       value: 3

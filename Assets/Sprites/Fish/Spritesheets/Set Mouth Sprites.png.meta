@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 065bb97a05d18b847a71857581f0746d
+guid: 39040a6aff475094e8f37d578aefd31f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,12 +97,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main body spritesheet 1_0
+      name: Set Mouth Sprites_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
+        width: 512
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -112,52 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52153ba1b8905944381e6fca0cc8ef59
-      internalID: -1633333587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Main body spritesheet 1_1
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 1024
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 419032946ac017a4bbedfb4e53113849
-      internalID: 2029142072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Main body spritesheet 1_2
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 1024
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6b0d0e849fdd8247b37417e9b31637b
-      internalID: -25790992
+      spriteID: 361c6f8dbef1d6f47b8a52782d1f394d
+      internalID: 180403997
       vertices: []
       indices: 
       edges: []
@@ -166,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e94cd7ee68e4cce42ab7abb304fa7b7b
+    spriteID: aa30012511f7591439b89b8321bc5751
     internalID: 0
     vertices: []
     indices: 
@@ -176,11 +132,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Main body spritesheet 1_0: -1633333587
-      Main body spritesheet 1_1: 2029142072
-      Main body spritesheet 1_2: -25790992
+      Set Mouth Sprites_0: 180403997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
