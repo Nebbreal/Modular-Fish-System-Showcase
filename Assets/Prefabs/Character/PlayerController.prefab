@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4483616759320003971}
   - component: {fileID: 9175018064612889655}
   m_Layer: 5
-  m_Name: CharacterController
+  m_Name: PlayerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,3 +51,5 @@ MonoBehaviour:
   pressureToCatch: 80
   pressureToReelIn: 50
   popUpScreen: {fileID: 0}
+  fishGenerator: {fileID: 0}
+  fishSpawnLocation: {fileID: 0}

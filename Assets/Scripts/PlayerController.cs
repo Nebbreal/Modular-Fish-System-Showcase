@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float pressureToCatch = 95f;
     [SerializeField] private float pressureToReelIn = 50f;

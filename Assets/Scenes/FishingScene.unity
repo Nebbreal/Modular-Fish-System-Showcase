@@ -2159,7 +2159,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1865578918872987796, guid: 1e3e09450807df04ba30b0224006fc6c, type: 3}
       propertyPath: m_Name
-      value: CharacterController
+      value: PlayerController
       objectReference: {fileID: 0}
     - target: {fileID: 4483616759320003971, guid: 1e3e09450807df04ba30b0224006fc6c, type: 3}
       propertyPath: m_Pivot.x
