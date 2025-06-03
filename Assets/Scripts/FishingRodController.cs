@@ -5,34 +5,19 @@ public class FishingRodController : MonoBehaviour
     [SerializeField] private float maxAngle = 10f;
     [SerializeField] private FishingRodStringController fishingRodString;
     [SerializeField] private FishingRodAnimationController fishingRodAnimationController;
-    float pressure;
-    float lastPressure;
 
-    void Update()
+    public void RotateWithPressure(float pressure, float lastPressure, float maxPressure)
     {
-        UpdatePressure();
-        RotateWithPressure();
-        fishingRodAnimationController.UpdateAnimation(pressure, lastPressure);
-    }
-    
-    private void UpdatePressure()
-    {
-        if (PISKController.Instance == null) return;
-        lastPressure = pressure;
-        pressure = PISKController.Instance.Pressure;
-    }
-    
-    private void RotateWithPressure()
-    {
-        float maxPressure = PISKController.Instance.MaxPressure;
-        float zRotation = -(pressure / maxPressure) * maxAngle;
+        bool pressureChanged = !Mathf.Approximately(pressure, lastPressure);
 
-        bool sameRotationAsOldRotation = Mathf.Approximately(transform.rotation.eulerAngles.z, zRotation);
-        if (!sameRotationAsOldRotation)
+        if (pressureChanged)
         {
+            float zRotation = -(pressure / maxPressure) * maxAngle;
             transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
+
             fishingRodString.RotateDownward();
             fishingRodString.MoveDownwardWithPressure(pressure);
         }
+        fishingRodAnimationController.UpdateAnimation(pressure, lastPressure);
     }
 }

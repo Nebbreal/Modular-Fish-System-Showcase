@@ -7,19 +7,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PopUpController popUpScreen;
     [SerializeField] private FishGenerator fishGenerator;
     [SerializeField] private Transform fishSpawnLocation;
+    [SerializeField] private FishingRodController fishingRodController;
+
     private float pressure;
+    private float lastPressure;
+    private float maxPressure;
     private bool readyToReelIn = false;
     GameObject generatedFish;
+
+    void Start()
+    {
+        if (PISKController.Instance == null) return;
+        maxPressure = PISKController.Instance.MaxPressure;
+    }
 
     void Update()
     {
         UpdatePressure();
+        fishingRodController.RotateWithPressure(pressure, lastPressure, maxPressure);
         TryCatchFish();
     }
 
     private void UpdatePressure()
     {
         if (PISKController.Instance == null) return;
+        lastPressure = pressure;
         pressure = PISKController.Instance.Pressure;
     }
 
