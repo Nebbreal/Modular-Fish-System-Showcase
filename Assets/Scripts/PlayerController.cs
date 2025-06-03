@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         UpdatePressure();
         fishingRodController.RotateWithPressure(pressure, lastPressure, maxPressure);
+        popUpScreen.HandleHidingPopUp(pressure);
         TryCatchFish();
     }
 
