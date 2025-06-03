@@ -2046,6 +2046,18 @@ PrefabInstance:
       propertyPath: m_Softness.y
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 7980375721018347981, guid: 63d8447d021033b45a45af83da222598, type: 3}
+      propertyPath: popUpScreen
+      value: 
+      objectReference: {fileID: 576679578}
+    - target: {fileID: 7980375721018347981, guid: 63d8447d021033b45a45af83da222598, type: 3}
+      propertyPath: fishGenerator
+      value: 
+      objectReference: {fileID: 763977969}
+    - target: {fileID: 7980375721018347981, guid: 63d8447d021033b45a45af83da222598, type: 3}
+      propertyPath: fishSpawnLocation
+      value: 
+      objectReference: {fileID: 906858174}
     - target: {fileID: 8662156878427464069, guid: 63d8447d021033b45a45af83da222598, type: 3}
       propertyPath: stringLength
       value: 240

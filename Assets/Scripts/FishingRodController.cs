@@ -4,7 +4,8 @@ public class FishingRodController : MonoBehaviour
 {
     [SerializeField] private float maxAngle = 10f;
     [SerializeField] private FishingRodStringController fishingRodString;
-    [SerializeField] private FishingRodAnimationController fishingRodAnimationController;
+    [SerializeField] private FishingRodAnimationController animationController;
+    [SerializeField] private FishingRodSoundController soundController;
 
     [SerializeField] PopUpController popUpScreen;
     [SerializeField] private FishGenerator fishGenerator;
@@ -27,7 +28,8 @@ public class FishingRodController : MonoBehaviour
             fishingRodString.RotateDownward();
             fishingRodString.MoveDownwardWithPressure(pressure);
         }
-        fishingRodAnimationController.UpdateAnimation(pressure, lastPressure);
+        animationController.UpdateAnimation(pressure, lastPressure);
+        soundController.PlaySound(pressure, lastPressure);
     }
 
     private void GenerateFish()
