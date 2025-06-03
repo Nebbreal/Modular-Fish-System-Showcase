@@ -145,6 +145,11 @@ MonoBehaviour:
   maxAngle: 20
   fishingRodString: {fileID: 8662156878427464069}
   fishingRodAnimationController: {fileID: 9068491580910363837}
+  popUpScreen: {fileID: 0}
+  fishGenerator: {fileID: 0}
+  fishSpawnLocation: {fileID: 0}
+  pressureToCatch: 80
+  pressureToReelIn: 50
 --- !u!95 &8273665973597044764
 Animator:
   serializedVersion: 7
