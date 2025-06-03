@@ -43,7 +43,7 @@ public class FishGenerator : MonoBehaviour
         if (shiftableFishBases.Length == 0 && !Mathf.Approximately(shiftableBaseChance, 0) || 
             setFishBases.Length == 0 && !Mathf.Approximately(shiftableBaseChance, 1))
         {
-            Debug.LogError("No fish found in FishBases, please make sure that the shiftableBaseChance is set to 0 or 100 if one of the lists is empty");
+            Debug.LogError("No fish found in FishBases, please make sure that the shiftableBaseChance is set to 0 if there are no shiftable fish bases and 1 if there are no set fish bases.");
             return null;
         }
         
