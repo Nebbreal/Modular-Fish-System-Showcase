@@ -247,6 +247,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: hatChance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: minimumValue
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: minimumSaturation
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: shiftableBaseChance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: shiftablePartChance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: fishBases.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -271,9 +291,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 338808545586331884, guid: ba866658d0acea246b26b84a74cc72a7, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: setFishBases.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: setEyeSprites.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: setHatSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: 'setFishBases.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7680157445179940107, guid: 83f8b266b0764bd2b21bba9b2015869b, type: 3}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: 'setFishBases.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1744813804411783863, guid: 14a0107739d4c80429315efd6f9e4622, type: 3}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: 'setFishBases.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3093792496056450985, guid: 84a6ab56953f8c34492009230a264e6f, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: 'setEyeSprites.Array.data[0]'
       value: 
@@ -287,13 +327,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1104103588, guid: f326b9f8d67dc724cb969f7f7d972e76, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: 'setHatSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: -25790992, guid: 065bb97a05d18b847a71857581f0746d, type: 3}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: setTopFinSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: shiftableFishBases.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: shiftableRearSprites.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: 'shiftableFishBases.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1937251830092524237, guid: fd9de34cd42e65f4680622adb668e618, type: 3}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: 'shiftableFishBases.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1744813804411783863, guid: 14a0107739d4c80429315efd6f9e4622, type: 3}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: 'shiftableFishBases.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3093792496056450985, guid: 84a6ab56953f8c34492009230a264e6f, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: shiftableMouthSprites.Array.size
       value: 3
@@ -403,7 +463,7 @@ RectTransform:
   m_GameObject: {fileID: 894666438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.74545, y: 0.74545, z: 0.74545}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1706761349}
@@ -411,7 +471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -371.1}
+  m_AnchoredPosition: {x: 0, y: -180}
   m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &894666440
@@ -826,7 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
