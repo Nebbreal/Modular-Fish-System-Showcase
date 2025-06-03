@@ -17,7 +17,7 @@ public class FishGenerator : MonoBehaviour
         shiftableMouthSprites, setMouthSprites, 
         shiftableRearSprites, setRearSprites;
 
-    [FormerlySerializedAs("hatSprites")] [SerializeField] 
+    [SerializeField] 
     private Sprite[] setHatSprites;
     private const string TopFinTag = "TopFin"; //Tag serialization seems to be missing from unity so this is a band aid for now, this should be done with classes later
     private const string BottomFinTag = "BottomFin"; 
@@ -72,7 +72,7 @@ public class FishGenerator : MonoBehaviour
         foreach (SpriteRenderer fishPartRenderer in fishPartRenderers)
         {
             GameObject partObject = fishPartRenderer.gameObject;
-
+            //Roll the chance for a hat if applicable
             if (partObject.CompareTag(HatTag))
             {
                 float hatRngValue = Random.Range(0f, 1f);
@@ -84,8 +84,8 @@ public class FishGenerator : MonoBehaviour
             }
             
             float colorRngValue = Random.Range(0f, 1f);
-            //TODO: In rework make a blacklist instead of manually adding them here
             //Exception made for eye's and hats due to them looking unnatural with a random color
+            //TODO: In rework make a blacklist instead of manually adding them here
             bool arePartsColorShiftable = colorRngValue <= shiftablePartChance && !partObject.CompareTag(EyeTag) && !partObject.CompareTag(HatTag);
             Sprite[] sprites = GetSpritesForPart(partObject.tag, arePartsColorShiftable);
 
