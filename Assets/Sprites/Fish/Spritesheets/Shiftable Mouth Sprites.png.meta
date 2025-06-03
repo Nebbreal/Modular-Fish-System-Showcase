@@ -104,16 +104,16 @@ TextureImporter:
         y: 0
         width: 512
         height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5484262, y: 0.5040355}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35bb904e5a2baba4f9e9c8b95a11cbbb
-      internalID: -1925015852
+      spriteID: 489ccea7397e132498f23ffbc85f7ccf
+      internalID: 133139910
       vertices: []
       indices: 
       edges: []
@@ -126,16 +126,16 @@ TextureImporter:
         y: 0
         width: 512
         height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.54842603, y: 0.50807106}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 424d6a8375076de4d854088a79b40979
-      internalID: 1134121269
+      spriteID: 6c6b17b35106f3d408a1efc2729a47f9
+      internalID: 1809176180
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c6c93d745a7e55429a43c039d3ec3a7
-      internalID: 145405383
+      spriteID: eea3549fc4d1cbc47bbcbf61be612265
+      internalID: 57687434
       vertices: []
       indices: 
       edges: []
@@ -171,15 +171,15 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 9
-      pivot: {x: 0.7340596, y: 0.45560926}
+      pivot: {x: 0.71388197, y: 0.45560926}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63ec977423ceefe4787bc9c5fcb92c83
-      internalID: 778633872
+      spriteID: 434b0ddbbdab0314b9346e6fe51d165d
+      internalID: 268736278
       vertices: []
       indices: 
       edges: []
@@ -193,15 +193,37 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 9
-      pivot: {x: 0.8309121, y: 0.6210653}
+      pivot: {x: 0.7340598, y: 0.6049233}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94f3b99907dc3944689a03c1a6b0f9fd
-      internalID: 1979034929
+      spriteID: 16d45dcc7768306459271ab42f518bbe
+      internalID: 945844841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Mouth Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 2558
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5686035, y: 0.47982246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc51bceaf1cada4a8ece0f328ebe007
+      internalID: -1775870369
       vertices: []
       indices: 
       edges: []
@@ -210,7 +232,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8aa74d623e547f847becfc07907ef054
+    spriteID: bc423b9d5805a2b448d4710952da3074
     internalID: 0
     vertices: []
     indices: 
@@ -222,11 +244,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Shiftable Mouth Sprites_0: -1925015852
-      Shiftable Mouth Sprites_1: 1134121269
-      Shiftable Mouth Sprites_2: 145405383
-      Shiftable Mouth Sprites_3: 778633872
-      Shiftable Mouth Sprites_4: 1979034929
+      Shiftable Mouth Sprites_0: 133139910
+      Shiftable Mouth Sprites_1: 1809176180
+      Shiftable Mouth Sprites_2: 57687434
+      Shiftable Mouth Sprites_3: 268736278
+      Shiftable Mouth Sprites_4: 945844841
+      Shiftable Mouth Sprites_5: -1775870369
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
