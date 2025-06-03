@@ -4,17 +4,21 @@ public class FishingRodController : MonoBehaviour
 {
     [SerializeField] private float maxAngle = 10f;
     [SerializeField] private FishingRodStringController fishingRodString;
+    [SerializeField] private FishingRodAnimationController fishingRodAnimationController;
     float pressure;
+    float lastPressure;
 
     void Update()
     {
         UpdatePressure();
         RotateWithPressure();
+        fishingRodAnimationController.UpdateAnimation(pressure, lastPressure);
     }
     
     private void UpdatePressure()
     {
         if (PISKController.Instance == null) return;
+        lastPressure = pressure;
         pressure = PISKController.Instance.Pressure;
     }
     
