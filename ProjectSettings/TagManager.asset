@@ -9,6 +9,7 @@ TagManager:
   - Eye
   - Mouth
   - RearFin
+  - Hat
   layers:
   - Default
   - TransparentFX

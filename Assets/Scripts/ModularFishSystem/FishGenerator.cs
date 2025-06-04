@@ -8,37 +8,61 @@ public class FishGenerator : MonoBehaviour
 {   
     [Header("Fish parts")]
     [SerializeField]
-    private GameObject[] fishBases;
-    
+    private GameObject[] shiftableFishBases, setFishBases;
+
     [SerializeField] 
     private Sprite[] shiftableTopFinSprites, setTopFinSprites,
         shiftableBottomFinSprites, setBottomFinSprites, 
         setEyeSprites, 
         shiftableMouthSprites, setMouthSprites, 
         shiftableRearSprites, setRearSprites;
+
+    [SerializeField] 
+    private Sprite[] setHatSprites;
     private const string TopFinTag = "TopFin"; //Tag serialization seems to be missing from unity so this is a band aid for now, this should be done with classes later
     private const string BottomFinTag = "BottomFin"; 
     private const string EyeTag = "Eye";
     private const string MouthTag = "Mouth";
     private const string RearFinTag = "RearFin";
+    private const string HatTag = "Hat";
     
     [Header("Configuration")]
+    [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored base for the fish. 0 = 0% chance, 1 = 100% chance")]
+    private float shiftableBaseChance;
     [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored part for the fish. 0 = 0% chance, 1 = 100% chance")]
-    private float shiftableColorChance;
+    private float shiftablePartChance;
+    [SerializeField, Range(0f, 1f), Tooltip("Chance for the fish to have a hat if applicable. 0 = 0% chance, 1 = 100% chance")]
+    private float hatChance;
+    [SerializeField, Range(0f, 1f), Tooltip("Minimum value for the randomly selected color")]
+    private float minimumValue;
+    [SerializeField, Range(0f, 1f), Tooltip("Minimum saturation value for the randomly selected color")]
+    private float minimumSaturation;
 
-    public GameObject GenerateFish(bool randomizeBodyColor = true)
+    public GameObject GenerateFish()
     {
-        //Get a random FishBase
-        int randomIndex = Random.Range(0, fishBases.Length);
-        
-        GameObject fish = Instantiate(fishBases[randomIndex]);
-        fish.SetActive(false);
-        Transform fishTransform = fish.transform;
-        SpriteRenderer fishRenderer = fish.GetComponent<SpriteRenderer>();
-
-        if (randomizeBodyColor)
+        if (shiftableFishBases.Length == 0 && !Mathf.Approximately(shiftableBaseChance, 0) || 
+            setFishBases.Length == 0 && !Mathf.Approximately(shiftableBaseChance, 1))
         {
-            SetRendererToRandomColor(fishRenderer);
+            Debug.LogError("No fish found in FishBases, please make sure that the shiftableBaseChance is set to 0 if there are no shiftable fish bases and 1 if there are no set fish bases.");
+            return null;
+        }
+        
+        float bodyColorRngValue = Random.Range(0f, 1f);
+        bool isColorShiftable = bodyColorRngValue <= shiftableBaseChance;
+
+        GameObject fish;
+        Transform fishTransform;
+        if (isColorShiftable)
+        {
+            int randomIndex = Random.Range(0, shiftableFishBases.Length);
+            
+            fish = InstantiateRandomFish(shiftableFishBases, randomIndex, out fishTransform);
+        }
+        else
+        {
+            int randomIndex = Random.Range(0, setFishBases.Length);
+
+            fish = InstantiateRandomFish(setFishBases, randomIndex, out fishTransform);
         }
         
         //Get the SpriteRenderers from only the direct child objects
@@ -48,14 +72,26 @@ public class FishGenerator : MonoBehaviour
         foreach (SpriteRenderer fishPartRenderer in fishPartRenderers)
         {
             GameObject partObject = fishPartRenderer.gameObject;
-            float randomValue = Random.Range(0f, 1f);
-            //Exception made for eye's due to them looking unnatural with a random color
-            bool isColorShiftable = randomValue <= shiftableColorChance && !partObject.CompareTag(EyeTag);
-            Sprite[] sprites = GetSpritesForPart(partObject.tag, isColorShiftable);
+            //Roll the chance for a hat if applicable
+            if (partObject.CompareTag(HatTag))
+            {
+                float hatRngValue = Random.Range(0f, 1f);
+
+                if (hatRngValue >= hatChance)
+                {
+                    continue;
+                }
+            }
+            
+            float colorRngValue = Random.Range(0f, 1f);
+            //Exception made for eye's and hats due to them looking unnatural with a random color
+            //TODO: In rework make a blacklist instead of manually adding them here
+            bool arePartsColorShiftable = colorRngValue <= shiftablePartChance && !partObject.CompareTag(EyeTag) && !partObject.CompareTag(HatTag);
+            Sprite[] sprites = GetSpritesForPart(partObject.tag, arePartsColorShiftable);
 
             if (sprites != null && sprites.Length > 0)
             {
-                SetRendererToRandomSprite(fishPartRenderer, sprites, isColorShiftable);
+                SetRendererToRandomSprite(fishPartRenderer, sprites, arePartsColorShiftable);
             }
             else
             {
@@ -65,7 +101,7 @@ public class FishGenerator : MonoBehaviour
         
         return fish;
     }
-
+    
     #region Part modification
     private Sprite[] GetSpritesForPart(string spriteTag, bool useShiftable)
     {
@@ -81,6 +117,8 @@ public class FishGenerator : MonoBehaviour
                 return useShiftable ? shiftableMouthSprites : setMouthSprites;
             case RearFinTag:
                 return useShiftable ? shiftableRearSprites : setRearSprites;
+            case HatTag:
+                return setHatSprites;
             default:
                 return null;
         }
@@ -99,18 +137,27 @@ public class FishGenerator : MonoBehaviour
         spriteRenderer.sprite = selectedSprite;
     }
 
-    private static void SetRendererToRandomColor(SpriteRenderer fishPartRenderer)
+    private void SetRendererToRandomColor(SpriteRenderer fishPartRenderer)
     {
-        float randomRedValue = Random.Range(0f, 1f);
-        float randomGreenValue = Random.Range(0f, 1f);
-        float randomBlueValue = Random.Range(0f, 1f);
-            
-        Color newColor = new Color(randomRedValue, randomGreenValue, randomBlueValue);
+        float randomHueValue = Random.Range(0f, 1f);
+        float randomSaturationValue = Random.Range(minimumSaturation, 1f);
+        float randomValue = Random.Range(minimumValue, 1f);
+        
+        Color newColor = Color.HSVToRGB(randomHueValue, randomSaturationValue, randomValue);
         fishPartRenderer.color = newColor;
     }
     #endregion
 
     #region Utility
+    private GameObject InstantiateRandomFish(GameObject[] fishes, int randomIndex, out Transform fishTransform)
+    {
+        GameObject fish;
+        fish = Instantiate(fishes[randomIndex]);
+        fish.SetActive(false);
+        fishTransform = fish.transform;
+        return fish;
+    }
+    
     private static List<SpriteRenderer> GetDirectChildSpriteRenderers(Transform fishTransform)
     {
         List<SpriteRenderer> fishPartRenderers = new ();
