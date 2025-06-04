@@ -90,7 +90,13 @@ public class FishGenerator : MonoBehaviour
             //TODO: In rework make a blacklist instead of manually adding them here
             bool arePartsColorShiftable = colorRngValue <= shiftablePartChance && !partObject.CompareTag(EyeTag) && !partObject.CompareTag(HatTag);
             Sprite[] sprites = GetSpritesForPart(partObject.tag, arePartsColorShiftable);
-
+            //Fall back to the other sprite array if none are found
+            if (sprites.Length == 0)
+            {
+                arePartsColorShiftable = !arePartsColorShiftable;
+                sprites = GetSpritesForPart(partObject.tag, arePartsColorShiftable);
+            }
+            
             if (sprites != null && sprites.Length > 0)
             {
                 SetRendererToRandomSprite(fishPartRenderer, sprites, arePartsColorShiftable);
