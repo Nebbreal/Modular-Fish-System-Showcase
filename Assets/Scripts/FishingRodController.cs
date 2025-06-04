@@ -48,7 +48,10 @@ public class FishingRodController : MonoBehaviour
         if (pressure > pressureToCatch && !readyToReelIn)
         {
             GenerateFish();
-            generatedFish.gameObject.transform.SetParent(fishSpawnLocation);
+            
+            Transform fishTransform = generatedFish.gameObject.transform;
+            fishTransform.SetParent(fishSpawnLocation);
+
             readyToReelIn = true;
         }
         else if (pressure < pressureToReelIn && readyToReelIn)
