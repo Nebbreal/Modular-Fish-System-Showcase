@@ -104,8 +104,8 @@ TextureImporter:
         y: 0
         width: 512
         height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.24172725, y: 0.58878124}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -122,12 +122,12 @@ TextureImporter:
       name: Rear fin spritesheet_1
       rect:
         serializedVersion: 2
-        x: 512
+        x: 510
         y: 0
         width: 512
         height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.26190472, y: 0.3870057}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -148,8 +148,8 @@ TextureImporter:
         y: 0
         width: 512
         height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.24576259, y: 0.3870057}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

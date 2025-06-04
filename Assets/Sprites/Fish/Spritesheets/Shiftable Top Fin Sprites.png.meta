@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 065bb97a05d18b847a71857581f0746d
+guid: 17bb6e70d68a1aa49ae17062f9f607cf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,67 +97,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main body spritesheet 1_0
+      name: Shiftable Top Fin Sprites_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1024
         height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49065152, y: 0.21331385}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52153ba1b8905944381e6fca0cc8ef59
-      internalID: -1633333587
+      spriteID: 558a0de1edbbaf042a2c6bcc08f1d013
+      internalID: -775830931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main body spritesheet 1_1
+      name: Shiftable Top Fin Sprites_1
       rect:
         serializedVersion: 2
         x: 1024
         y: 0
         width: 1024
         height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4813031, y: 0.21954606}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 419032946ac017a4bbedfb4e53113849
-      internalID: 2029142072
+      spriteID: 77a94c7581667f747b44490a14ae3299
+      internalID: 2025662465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main body spritesheet 1_2
+      name: Shiftable Top Fin Sprites_2
       rect:
         serializedVersion: 2
         x: 2048
         y: 0
         width: 1024
         height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49999976, y: 0.20708139}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6b0d0e849fdd8247b37417e9b31637b
-      internalID: -25790992
+      spriteID: 08b0c5797620f9f478930e216096e710
+      internalID: -699497846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Top Fin Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 9
+      pivot: {x: 0.48753524, y: 0.2195463}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b8644c1962f044db2babbbd47c5b3b
+      internalID: -227343849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Top Fin Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 9
+      pivot: {x: 0.49376774, y: 0.21331409}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b97d0e526ea5d47afdd228a4bec0ee
+      internalID: -698364087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Top Fin Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5093484, y: 0.22577852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41feb596bcf57e9438f1227065e111a5
+      internalID: -746473002
       vertices: []
       indices: 
       edges: []
@@ -166,7 +232,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e94cd7ee68e4cce42ab7abb304fa7b7b
+    spriteID: 8e1e3161a8b5c3f4da9701fb8a850e74
     internalID: 0
     vertices: []
     indices: 
@@ -178,9 +244,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Main body spritesheet 1_0: -1633333587
-      Main body spritesheet 1_1: 2029142072
-      Main body spritesheet 1_2: -25790992
+      Shiftable Top Fin Sprites_0: -775830931
+      Shiftable Top Fin Sprites_1: 2025662465
+      Shiftable Top Fin Sprites_2: -699497846
+      Shiftable Top Fin Sprites_3: -227343849
+      Shiftable Top Fin Sprites_4: -698364087
+      Shiftable Top Fin Sprites_5: -746473002
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
