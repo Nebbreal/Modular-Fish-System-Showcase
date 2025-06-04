@@ -148,8 +148,8 @@ TextureImporter:
         y: 0
         width: 512
         height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.31840205, y: 0.51210654}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,7 +193,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 9
-      pivot: {x: 0.7340598, y: 0.6049233}
+      pivot: {x: 0.77038, y: 0.560533}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: Shiftable Mouth Sprites_5
       rect:
         serializedVersion: 2
-        x: 2558
+        x: 2560
         y: 0
         width: 512
         height: 512
       alignment: 9
-      pivot: {x: 0.5686035, y: 0.47982246}
+      pivot: {x: 0.5564971, y: 0.4838579}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

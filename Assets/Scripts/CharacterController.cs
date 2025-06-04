@@ -33,7 +33,6 @@ public class CharacterController : MonoBehaviour
         generatedFish = fish;
 
         fish.transform.position = fishSpawnLocation.position;
-        fish.transform.localScale = fishSpawnLocation.localScale;
     }
 
     private void TryCatchFish()
