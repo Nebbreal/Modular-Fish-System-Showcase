@@ -7,6 +7,7 @@ public class FishingRodAnimationController : MonoBehaviour
     [SerializeField] private float speedMultiplier = 1f;
     [SerializeField] private string animationName;
     [SerializeField] private string reverseAnimationName;
+    [SerializeField] private int animatorLayerIndex = 0;
 
     private string currentAnimation = "";
 
@@ -27,8 +28,7 @@ public class FishingRodAnimationController : MonoBehaviour
         float reversedFrameOffset = 1f - FrameOffset();
         if (currentAnimation != animationName)
         {
-            int layer = 0;
-            animator.Play(animationName, layer, reversedFrameOffset);
+            animator.Play(animationName, animatorLayerIndex, reversedFrameOffset);
             currentAnimation = animationName;
         }
     }
