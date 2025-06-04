@@ -11,9 +11,13 @@ public class PopUpController : MonoBehaviour
         popUpCooldownRemaining = popUpCooldown;
     }
 
-    public void HandleHidingPopUp(float pressure)
+    private void Update()
     {
         popUpCooldownRemaining -= Time.deltaTime * 1000; // seconds to milliseconds
+    }
+
+    public void HandleHidingPopUp(float pressure)
+    {
         if (pressure > pressureToHidePopUp && popUpCooldownRemaining < 0f)
         {
             gameObject.SetActive(false);
