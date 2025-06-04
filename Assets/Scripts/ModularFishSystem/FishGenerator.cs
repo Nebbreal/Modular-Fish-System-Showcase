@@ -57,6 +57,8 @@ public class FishGenerator : MonoBehaviour
             int randomIndex = Random.Range(0, shiftableFishBases.Length);
             
             fish = InstantiateRandomFish(shiftableFishBases, randomIndex, out fishTransform);
+            SpriteRenderer fishRenderer = fish.GetComponent<SpriteRenderer>();
+            SetRendererToRandomColor(fishRenderer);
         }
         else
         {
