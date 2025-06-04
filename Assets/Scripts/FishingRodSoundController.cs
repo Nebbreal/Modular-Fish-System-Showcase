@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using UnityEngine;
 
@@ -28,11 +27,4 @@ public class FishingRodSoundController : MonoBehaviour
 
         audioSource.resource = audioClip.clip;
     }
-}
-
-[Serializable]
-public class PressureDependantAudioClip
-{
-    public AudioClip clip;
-    public float pressureThreshold;
 }
