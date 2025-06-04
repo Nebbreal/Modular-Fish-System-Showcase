@@ -449,7 +449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: shiftableRearSprites.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: 'shiftableFishBases.Array.data[0]'
@@ -494,9 +494,13 @@ PrefabInstance:
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: 'shiftableRearSprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 249765379, guid: 8d0c032f0bde2154691c283ab44a2dad, type: 3}
+      objectReference: {fileID: -604726213, guid: 8d0c032f0bde2154691c283ab44a2dad, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: 'shiftableRearSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 249765379, guid: 8d0c032f0bde2154691c283ab44a2dad, type: 3}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: 'shiftableRearSprites.Array.data[2]'
       value: 
       objectReference: {fileID: 130221711, guid: 8d0c032f0bde2154691c283ab44a2dad, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
