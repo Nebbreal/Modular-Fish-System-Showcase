@@ -14,7 +14,7 @@ public class FishingRodSoundController : MonoBehaviour
     public void PlaySound(float pressure, float lastPressure)
     {
         float pressureDifference = Mathf.Abs(pressure - lastPressure);
-        var audioClip = audioClips.First(clip => clip.pressureThreshold < pressureDifference);
+        PressureDependantAudioClip audioClip = audioClips.FirstOrDefault(clip => clip.pressureThreshold < pressureDifference);
 
         if (audioClip == null)
         {
