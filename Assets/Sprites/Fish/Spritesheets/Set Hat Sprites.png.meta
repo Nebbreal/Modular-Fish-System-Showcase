@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a02c33fd875d437439673b2b718e8292
+guid: c204cb61395bc904d87cb5c59b63ac25
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,67 +97,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Top fin spritesheet_0
+      name: Set Hat Sprites_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
+        width: 512
         height: 512
-      alignment: 9
-      pivot: {x: 0.33454397, y: 0.40314764}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4ced40a757f19b47b567f5c7ecc2be1
-      internalID: 1817784868
+      spriteID: 230ea788a1e83b140a2b70a76881d654
+      internalID: 1008066742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Top fin spritesheet_1
+      name: Set Hat Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5524616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62da27f7a47673e48a601b75c081d01a
+      internalID: -1799351616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set Hat Sprites_2
       rect:
         serializedVersion: 2
         x: 1024
         y: 0
-        width: 1024
+        width: 512
         height: 512
-      alignment: 9
-      pivot: {x: 0.51614213, y: 0.4838579}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eef2cd36201fa08429716d1626893844
-      internalID: -2039149572
+      spriteID: a1e6fab8203d7584bb29b755764b2f67
+      internalID: -342491064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Top fin spritesheet_2
+      name: Set Hat Sprites_3
       rect:
         serializedVersion: 2
-        x: 2048
+        x: 1536
         y: 0
-        width: 1024
+        width: 512
         height: 512
       alignment: 9
-      pivot: {x: 0.5121064, y: 0.4677161}
+      pivot: {x: 0.5, y: 0.5403551}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d4d25256d700954980d6795ff8812e4
-      internalID: -872663022
+      spriteID: 557053709eb91a641a6a5bc5ced2636c
+      internalID: -1510681271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set Hat Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 808c656bf2e96584ba42987ab459c6d1
+      internalID: -1590943301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set Hat Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6edad80259d5d314bbe98bdf15b374b6
+      internalID: -1956119643
       vertices: []
       indices: 
       edges: []
@@ -166,7 +232,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 49c2e492ff890c34eaed191f66dfc83d
+    spriteID: fd7c6b8c6c62d1544b878e0e7d1f7fa1
     internalID: 0
     vertices: []
     indices: 
@@ -176,11 +242,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Top fin spritesheet_0: 1817784868
-      Top fin spritesheet_1: -2039149572
-      Top fin spritesheet_2: -872663022
+      Set Hat Sprites_0: 1008066742
+      Set Hat Sprites_1: -1799351616
+      Set Hat Sprites_2: -342491064
+      Set Hat Sprites_3: -1510681271
+      Set Hat Sprites_4: -1590943301
+      Set Hat Sprites_5: -1956119643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

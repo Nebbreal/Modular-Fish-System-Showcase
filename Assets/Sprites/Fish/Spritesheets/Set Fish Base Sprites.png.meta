@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a02c33fd875d437439673b2b718e8292
+guid: 202c7ca502b8f9949a032872d1983801
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,67 +97,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Top fin spritesheet_0
+      name: Set Fish Base Sprites_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1024
         height: 512
-      alignment: 9
-      pivot: {x: 0.33454397, y: 0.40314764}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4ced40a757f19b47b567f5c7ecc2be1
-      internalID: 1817784868
+      spriteID: eb3cbd71eda5cd14d958c804bffb5405
+      internalID: 1868124602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Top fin spritesheet_1
+      name: Set Fish Base Sprites_1
       rect:
         serializedVersion: 2
         x: 1024
         y: 0
         width: 1024
         height: 512
-      alignment: 9
-      pivot: {x: 0.51614213, y: 0.4838579}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eef2cd36201fa08429716d1626893844
-      internalID: -2039149572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Top fin spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 1024
-        height: 512
-      alignment: 9
-      pivot: {x: 0.5121064, y: 0.4677161}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d4d25256d700954980d6795ff8812e4
-      internalID: -872663022
+      spriteID: 92eb9658c9413f64d93c4b32661df015
+      internalID: -403945682
       vertices: []
       indices: 
       edges: []
@@ -166,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 49c2e492ff890c34eaed191f66dfc83d
+    spriteID: 3786d28d56f1b74419d96fdcda693581
     internalID: 0
     vertices: []
     indices: 
@@ -178,9 +156,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Top fin spritesheet_0: 1817784868
-      Top fin spritesheet_1: -2039149572
-      Top fin spritesheet_2: -872663022
+      Set Fish Base Sprites_0: 1868124602
+      Set Fish Base Sprites_1: -403945682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

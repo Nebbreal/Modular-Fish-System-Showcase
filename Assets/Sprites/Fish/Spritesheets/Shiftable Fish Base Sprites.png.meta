@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a02c33fd875d437439673b2b718e8292
+guid: ec7768ef9c637874891c543c2955dc8d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,67 +97,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Top fin spritesheet_0
+      name: Shiftable Fish Base Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400f688b5afe1af449916f7e638efffd
+      internalID: -1989585661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Fish Base Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a148c40c3b10d2245a975388c50f1d0e
+      internalID: 1790057460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Fish Base Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b53160792c65fd41b7efa2b18124e42
+      internalID: -1444960470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Fish Base Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcac74d6a6362aa48849df76e236a428
+      internalID: 1383445837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Fish Base Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1982c1208d6a694428e3845838379860
+      internalID: 1711521124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Fish Base Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b7edb6a98c27047bf2b87d4e6c707a
+      internalID: -433177533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiftable Fish Base Sprites_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1024
         height: 512
-      alignment: 9
-      pivot: {x: 0.33454397, y: 0.40314764}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4ced40a757f19b47b567f5c7ecc2be1
-      internalID: 1817784868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Top fin spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 1024
-        height: 512
-      alignment: 9
-      pivot: {x: 0.51614213, y: 0.4838579}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eef2cd36201fa08429716d1626893844
-      internalID: -2039149572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Top fin spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 1024
-        height: 512
-      alignment: 9
-      pivot: {x: 0.5121064, y: 0.4677161}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d4d25256d700954980d6795ff8812e4
-      internalID: -872663022
+      spriteID: e045b66f49e42eb4ba9f5a9ad41cc20f
+      internalID: 239257872
       vertices: []
       indices: 
       edges: []
@@ -166,7 +254,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 49c2e492ff890c34eaed191f66dfc83d
+    spriteID: 27fac44a76f96f445901d9630932b4ed
     internalID: 0
     vertices: []
     indices: 
@@ -176,11 +264,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":2.0},"gridSpriteSize":{"x":1024.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Top fin spritesheet_0: 1817784868
-      Top fin spritesheet_1: -2039149572
-      Top fin spritesheet_2: -872663022
+      Shiftable Fish Base Sprites_0: -1989585661
+      Shiftable Fish Base Sprites_1: 1790057460
+      Shiftable Fish Base Sprites_2: -1444960470
+      Shiftable Fish Base Sprites_3: 1383445837
+      Shiftable Fish Base Sprites_4: 1711521124
+      Shiftable Fish Base Sprites_5: -433177533
+      Shiftable Fish Base Sprites_6: 239257872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
