@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8273665973597044764}
-  speedMultiplier: 1
+  speedMultiplier: 0.65
   animationName: Fishing Rod Handle Animation
   reverseAnimationName: Fishing Rod Handle Animation Reverse
 --- !u!82 &4458019361420581562
