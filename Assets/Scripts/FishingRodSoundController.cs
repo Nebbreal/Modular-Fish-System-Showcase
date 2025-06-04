@@ -15,19 +15,18 @@ public class FishingRodSoundController : MonoBehaviour
     public void PlaySound(float pressure, float lastPressure)
     {
         float pressureDifference = Mathf.Abs(pressure - lastPressure);
+        var audioClip = audioClips.First(clip => clip.pressureThreshold < pressureDifference);
 
-        foreach (var audioClip in audioClips)
+        if (audioClip == null)
         {
-            if (pressureDifference > audioClip.pressureThreshold)
-            {
-                if (!audioSource.isPlaying)
-                    audioSource.Play();
-
-                audioSource.resource = audioClip.clip;
-                return;
-            }
+            audioSource.Stop();
+            return;
         }
-        audioSource.Stop();
+
+        if (!audioSource.isPlaying)
+            audioSource.Play();
+
+        audioSource.resource = audioClip.clip;
     }
 }
 
