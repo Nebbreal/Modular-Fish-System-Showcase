@@ -40,7 +40,6 @@ public class FishingRodController : MonoBehaviour
         generatedFish.SetActive(true);
 
         generatedFish.transform.position = fishSpawnLocation.position;
-        generatedFish.transform.localScale = fishSpawnLocation.localScale;
     }
 
     public void TryCatchFish(float pressure)
