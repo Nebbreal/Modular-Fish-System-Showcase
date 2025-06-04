@@ -104,16 +104,16 @@ TextureImporter:
         y: 0
         width: 512
         height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.38510752, y: 0.56401926}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 361c6f8dbef1d6f47b8a52782d1f394d
-      internalID: 180403997
+      spriteID: 5cea51d8d4043a14f9e5b087a45cb9a3
+      internalID: 328459821
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: aa30012511f7591439b89b8321bc5751
+    spriteID: 49b203d45bee1974b815090f814e3df5
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Set Mouth Sprites_0: 180403997
+      Set Mouth Sprites_0: 328459821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
