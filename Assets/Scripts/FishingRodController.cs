@@ -36,13 +36,11 @@ public class FishingRodController : MonoBehaviour
     {
         if (generatedFish) Destroy(generatedFish);
 
-        GameObject fish = fishGenerator.GenerateFish();
-        fish.SetActive(true);
+        generatedFish = fishGenerator.GenerateFish();
+        generatedFish.SetActive(true);
 
-        generatedFish = fish;
-
-        fish.transform.position = fishSpawnLocation.position;
-        fish.transform.localScale = fishSpawnLocation.localScale;
+        generatedFish.transform.position = fishSpawnLocation.position;
+        generatedFish.transform.localScale = fishSpawnLocation.localScale;
     }
 
     public void TryCatchFish(float pressure)
