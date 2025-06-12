@@ -7,9 +7,9 @@ public class FishingRodAnimationController : MonoBehaviour
     [SerializeField] private float speedMultiplier = 1f;
     [SerializeField] private string animationName;
     [SerializeField] private string reverseAnimationName;
-    [SerializeField] private int animatorLayerIndex = 0;
+    [SerializeField] private int animatorLayerIndex;
 
-    private string currentAnimation = "";
+    private string _currentAnimation = "";
 
     public void UpdateAnimation(float pressure, float lastPressure)
     {
@@ -23,20 +23,20 @@ public class FishingRodAnimationController : MonoBehaviour
         animator.speed = MathF.Abs(animationSpeed);
     }
 
-    private void PlayNewAnimation(string animationName)
+    private void PlayNewAnimation(string animName)
     {
         float reversedFrameOffset = 1f - FrameOffset();
-        if (currentAnimation != animationName)
+        if (_currentAnimation != animName)
         {
-            animator.Play(animationName, animatorLayerIndex, reversedFrameOffset);
-            currentAnimation = animationName;
+            animator.Play(animName, animatorLayerIndex, reversedFrameOffset);
+            _currentAnimation = animName;
         }
     }
 
     private float FrameOffset()
     {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        if (stateInfo.IsName(currentAnimation))
+        if (stateInfo.IsName(_currentAnimation))
             return stateInfo.normalizedTime % 1f;
         return 0f;
     }
