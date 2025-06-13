@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FishingRodController : MonoBehaviour
 {
@@ -14,8 +15,18 @@ public class FishingRodController : MonoBehaviour
     [SerializeField] private float pressureToReelIn = 50f;
     private bool readyToReelIn = false;
     GameObject generatedFish;
+    
+    [SerializeField] AnimationCurve FishingRodCurve;
 
 
+    void Update()
+    {
+        if (readyToReelIn)
+        {
+            transform.position = new Vector3(transform.position.x, FishingRodCurve.Evaluate((Time.time % FishingRodCurve.length)), transform.position.z);
+        }
+    }
+    
     public void RotateWithPressure(float pressure, float lastPressure, float maxPressure)
     {
         bool pressureChanged = !Mathf.Approximately(pressure, lastPressure);
