@@ -2,49 +2,31 @@ using UnityEngine;
 
 public class FishingRodStringController : MonoBehaviour
 {
+    [SerializeField] private GameObject stringTop;
+    [SerializeField] private GameObject rodTip;
     private float _stringLength;
-    private Camera _cam;
-    private Vector3 _anchorOffset;
-    private Vector3 _startAnchorOffset;
-    private float _startPixelHeightCamera;
-    private float _lastPixelHeightCamera;
+    private float _localStringPivotY;
 
     private void Start()
     {
-        _startAnchorOffset = transform.position - transform.parent.position;
-        _anchorOffset = _startAnchorOffset;
-        _cam = Camera.main;
-        
-        if (_cam)
-        {
-            _stringLength = _cam.pixelHeight / 9;
-            _startPixelHeightCamera = _cam.pixelHeight;
-            _lastPixelHeightCamera = _cam.pixelHeight;
-        }
-    }
+        float stringTopY = stringTop.transform.position.y;
+        float rodTipY = rodTip.transform.position.y;
 
-    private void Update()
-    {
-        if (_cam && !Mathf.Approximately(_cam.pixelHeight, _lastPixelHeightCamera))
-        {
-            _stringLength = _cam.pixelHeight / 9;
-            _anchorOffset = _startAnchorOffset * _cam.pixelHeight / _startPixelHeightCamera;
-            _lastPixelHeightCamera = _cam.pixelHeight;
-        }
+        _localStringPivotY = transform.localPosition.y;
+        _stringLength = stringTopY - rodTipY;
     }
-
-    public void RotateDownward()
+    
+    public void RotateZ(float angle)
     {
-        transform.rotation = Quaternion.Euler(Vector3.down);
+        transform.localEulerAngles = new Vector3(0f, 0f, angle);
     }
 
     public void MoveDownwardWithPressure(float pressure)
     {
         float loweringDistance = pressure / 100f * _stringLength;
-        Vector3 transformVector = Vector3.down * loweringDistance;
-
-        Vector3 anchoredPosition = transform.parent.position + _anchorOffset;
-        Vector3 worldPosition = anchoredPosition + transformVector;
-        transform.position = worldPosition;
+        Vector3 transformVector = new Vector3(0f, -1f * loweringDistance + _localStringPivotY, 0f);
+        
+        transform.localPosition = transformVector;
+        transform.position = new Vector3(rodTip.transform.position.x, transform.position.y);
     }
 }

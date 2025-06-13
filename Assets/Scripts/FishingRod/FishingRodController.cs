@@ -52,7 +52,7 @@ public class FishingRodController : MonoBehaviour
             float zRotation = -(pressure / maxPressure) * maxAngle;
             transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
 
-            fishingRodString.RotateDownward();
+            fishingRodString.RotateZ(-zRotation);
             fishingRodString.MoveDownwardWithPressure(pressure);
         }
         animationController.UpdateAnimation(pressure, lastPressure);
