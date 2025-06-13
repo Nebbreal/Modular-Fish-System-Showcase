@@ -21,12 +21,14 @@ public class FishingRodStringController : MonoBehaviour
         transform.localEulerAngles = new Vector3(0f, 0f, angle);
     }
 
-    public void MoveDownwardWithPressure(float pressure)
+    public void MoveDownwardWithPressure(float pressure, float yOffset = 0f)
     {
+        //Get distance based on pressure
         float loweringDistance = pressure / 100f * _stringLength;
-        Vector3 transformVector = new Vector3(0f, -1f * loweringDistance + _localStringPivotY, 0f);
+        Vector3 transformVector = new Vector3(0f, -1f * loweringDistance + _localStringPivotY + yOffset, 0f);
         
         transform.localPosition = transformVector;
+        //Force the x position to be in line with the fishing rod tip
         transform.position = new Vector3(rodTip.transform.position.x, transform.position.y);
     }
 }
