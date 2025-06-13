@@ -34,7 +34,7 @@ cd pillo-hulan-1
 - Press play to start the game
 
 ## Structure
-The folder structure is generally "task/object". Tasks being what something is, like a script or prefab. Object being what it represents, like a fishing rod. 
+The folder structure is generally "task/object". Task being what type of file something is, like a script or prefab. Object being what it represents, like a fishing rod. 
 Related products might be in subfolders instead of its own folder.
 
 Some examples are:
