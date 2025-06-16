@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class FishingRodController : MonoBehaviour
 {
@@ -13,18 +12,34 @@ public class FishingRodController : MonoBehaviour
     [SerializeField] private Transform fishSpawnLocation;
     [SerializeField] private float pressureToCatch = 95f;
     [SerializeField] private float pressureToReelIn = 50f;
-    private bool readyToReelIn = false;
-    GameObject generatedFish;
+    private bool _readyToReelIn = false;
+    private GameObject _generatedFish;
     
-    [SerializeField] AnimationCurve FishingRodCurve;
-
-
-    void Update()
+    public void TryCatchFish(float pressure)
     {
-        if (readyToReelIn)
+        if (pressure > pressureToCatch && !_readyToReelIn)
         {
-            transform.position = new Vector3(transform.position.x, FishingRodCurve.Evaluate((Time.time % FishingRodCurve.length)), transform.position.z);
+            GenerateFish();
+            
+            Transform fishTransform = _generatedFish.gameObject.transform;
+            fishTransform.SetParent(fishSpawnLocation);
+
+            _readyToReelIn = true;
         }
+        else if (pressure < pressureToReelIn && _readyToReelIn)
+        {
+            popUpScreen.gameObject.SetActive(true);
+            _readyToReelIn = false;
+        }
+    }
+    private void GenerateFish()
+    {
+        if (_generatedFish) Destroy(_generatedFish);
+
+        _generatedFish = fishGenerator.GenerateFish();
+        _generatedFish.SetActive(true);
+
+        _generatedFish.transform.position = fishSpawnLocation.position;
     }
     
     public void RotateWithPressure(float pressure, float lastPressure, float maxPressure)
@@ -33,41 +48,14 @@ public class FishingRodController : MonoBehaviour
 
         if (pressureChanged)
         {
+            //Set the Z rotation based on how hard the Pillo is pressed ranging from 0% of maxAngle to 100% of maxAngle
             float zRotation = -(pressure / maxPressure) * maxAngle;
             transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
 
-            fishingRodString.RotateDownward();
+            fishingRodString.RotateZ(-zRotation);
             fishingRodString.MoveDownwardWithPressure(pressure);
         }
         animationController.UpdateAnimation(pressure, lastPressure);
         soundController.PlaySound(pressure, lastPressure);
-    }
-
-    private void GenerateFish()
-    {
-        if (generatedFish) Destroy(generatedFish);
-
-        generatedFish = fishGenerator.GenerateFish();
-        generatedFish.SetActive(true);
-
-        generatedFish.transform.position = fishSpawnLocation.position;
-    }
-
-    public void TryCatchFish(float pressure)
-    {
-        if (pressure > pressureToCatch && !readyToReelIn)
-        {
-            GenerateFish();
-            
-            Transform fishTransform = generatedFish.gameObject.transform;
-            fishTransform.SetParent(fishSpawnLocation);
-
-            readyToReelIn = true;
-        }
-        else if (pressure < pressureToReelIn && readyToReelIn)
-        {
-            popUpScreen.gameObject.SetActive(true);
-            readyToReelIn = false;
-        }
     }
 }
