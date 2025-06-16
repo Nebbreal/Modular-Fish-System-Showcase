@@ -7,8 +7,6 @@ public class FishingRodStringController : MonoBehaviour
     private float _stringLength;
     private float _localStringPivotY;
     private float yString;
-    
-    [SerializeField] private float stringLength;
 
     [SerializeField] AnimationCurve FishingRodCurve;
 
@@ -41,7 +39,7 @@ public class FishingRodStringController : MonoBehaviour
     {
         if (_readyToReelIn)
         {
-            yString = FishingRodCurve.Evaluate((Time.time % FishingRodCurve.length)) + stringLength;
+            yString = FishingRodCurve.Evaluate(Time.time % FishingRodCurve.length);
         }
         return yString;
     }
