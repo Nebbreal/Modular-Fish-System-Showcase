@@ -4,16 +4,19 @@ public class FishingRodStringController : MonoBehaviour
 {
     [SerializeField] private GameObject stringTop;
     [SerializeField] private GameObject rodTip;
+    [SerializeField] private GameObject topSpriteMask;
     private float _stringLength;
     private float _localStringPivotY;
+    private float _topSpriteMaskY;
 
     private void Start()
     {
         float stringTopY = stringTop.transform.position.y;
         float rodTipY = rodTip.transform.position.y;
-
+        
         _localStringPivotY = transform.localPosition.y;
         _stringLength = stringTopY - rodTipY;
+        _topSpriteMaskY = topSpriteMask.transform.position.y;
     }
     
     public void RotateZ(float angle)
