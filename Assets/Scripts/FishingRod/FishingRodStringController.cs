@@ -6,6 +6,11 @@ public class FishingRodStringController : MonoBehaviour
     [SerializeField] private GameObject rodTip;
     private float _stringLength;
     private float _localStringPivotY;
+    private float yString;
+    
+    [SerializeField] private float stringLength;
+
+    [SerializeField] AnimationCurve FishingRodCurve;
 
     private void Start()
     {
@@ -30,5 +35,14 @@ public class FishingRodStringController : MonoBehaviour
         transform.localPosition = transformVector;
         //Force the x position to be in line with the fishing rod tip
         transform.position = new Vector3(rodTip.transform.position.x, transform.position.y);
+    }
+
+    public float GetYOffset(bool _readyToReelIn)
+    {
+        if (_readyToReelIn)
+        {
+            yString = FishingRodCurve.Evaluate((Time.time % FishingRodCurve.length)) + stringLength;
+        }
+        return yString;
     }
 }

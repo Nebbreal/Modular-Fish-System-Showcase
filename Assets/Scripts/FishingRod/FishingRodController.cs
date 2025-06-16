@@ -53,8 +53,10 @@ public class FishingRodController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
 
             fishingRodString.RotateZ(-zRotation);
-            fishingRodString.MoveDownwardWithPressure(pressure);
         }
+        float yOffset = fishingRodString.GetYOffset(_readyToReelIn);
+        fishingRodString.MoveDownwardWithPressure(pressure, yOffset);
+        
         animationController.UpdateAnimation(pressure, lastPressure);
         soundController.PlaySound(pressure, lastPressure);
     }
