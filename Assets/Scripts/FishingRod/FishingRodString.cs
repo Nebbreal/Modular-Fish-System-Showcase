@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FishingRodString : MonoBehaviour
 {
     [SerializeField] private GameObject stringTop;
     [SerializeField] private GameObject rodTip;
-    [SerializeField] private GameObject topSpriteMask;
+    [SerializeField] private GameObject stringSpriteMask;
     private float _stringLength;
     private float _localStringPivotY;
     private float _topSpriteMaskY;
@@ -16,7 +17,7 @@ public class FishingRodString : MonoBehaviour
         
         _localStringPivotY = transform.localPosition.y;
         _stringLength = stringTopY - rodTipY;
-        _topSpriteMaskY = topSpriteMask.transform.position.y;
+        _topSpriteMaskY = stringSpriteMask.transform.position.y;
     }
     
     public void RotateZ(float angle)
@@ -25,7 +26,7 @@ public class FishingRodString : MonoBehaviour
         
         //Counteract the rotation of the rod to keep the rod (and mask) straight
         transform.localEulerAngles = eulerAngle;
-        topSpriteMask.transform.localEulerAngles = eulerAngle;
+        stringSpriteMask.transform.localEulerAngles = eulerAngle;
     }
 
     public void MoveDownwardWithPressure(float pressure, float yOffset = 0f)
@@ -38,6 +39,6 @@ public class FishingRodString : MonoBehaviour
         
         //Force the x position to be in line with the fishing rod tip
         transform.position = new Vector3(rodTip.transform.position.x, transform.position.y);
-        topSpriteMask.transform.position = new Vector3(rodTip.transform.position.x, topSpriteMask.transform.position.y);
+        stringSpriteMask.transform.position = new Vector3(rodTip.transform.position.x, stringSpriteMask.transform.position.y);
     }
 }
