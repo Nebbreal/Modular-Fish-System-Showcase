@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class FishingRodAnimationController : MonoBehaviour
+public class FishingRodAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private float speedMultiplier = 1f;

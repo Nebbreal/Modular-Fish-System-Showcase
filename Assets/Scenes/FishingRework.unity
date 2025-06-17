@@ -380,8 +380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAngle: 20
   fishingRodString: {fileID: 1775692300}
-  animationController: {fileID: 392230836}
-  soundController: {fileID: 392230834}
+  rodAnimation: {fileID: 392230836}
+  sound: {fileID: 392230834}
   popUpScreen: {fileID: 1601451933}
   fishGenerator: {fileID: 408115498}
   fishSpawnLocation: {fileID: 2010152462}
@@ -898,6 +898,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1139669541}
   - {fileID: 1775692298}
   m_Father: {fileID: 392230832}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1013,11 +1014,11 @@ Transform:
   m_GameObject: {fileID: 1139669540}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.666674, z: 0}
-  m_LocalScale: {x: 3.3333342, y: 57.640884, z: 3.3333342}
+  m_LocalPosition: {x: 0, y: 8.380001, z: 0}
+  m_LocalScale: {x: 1, y: 17.292261, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1775692298}
+  m_Father: {fileID: 1033587554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!331 &1139669542
 SpriteMask:
@@ -2234,7 +2235,6 @@ Transform:
   m_LocalScale: {x: 0.29999992, y: 0.29999992, z: 0.29999992}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1139669541}
   - {fileID: 1070936008}
   m_Father: {fileID: 1033587554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2433,6 +2433,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9175018064612889655, guid: 1e3e09450807df04ba30b0224006fc6c, type: 3}
+      propertyPath: fishingRod
+      value: 
+      objectReference: {fileID: 392230837}
     - target: {fileID: 9175018064612889655, guid: 1e3e09450807df04ba30b0224006fc6c, type: 3}
       propertyPath: popUpScreen
       value: 

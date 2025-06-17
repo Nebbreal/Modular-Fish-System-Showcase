@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class FishingRodController : MonoBehaviour
+public class FishingRod : MonoBehaviour
 {
     [SerializeField] private float maxAngle = 10f;
-    [SerializeField] private FishingRodStringController fishingRodString;
-    [SerializeField] private FishingRodAnimationController animationController;
-    [SerializeField] private FishingRodSoundController soundController;
+    [SerializeField] private FishingRodString fishingRodString;
+    [SerializeField] private FishingRodAnimation rodAnimation;
+    [SerializeField] private FishingRodSound sound;
 
     [SerializeField] PopUpController popUpScreen;
     [SerializeField] private FishGenerator fishGenerator;
@@ -55,7 +56,7 @@ public class FishingRodController : MonoBehaviour
             fishingRodString.RotateZ(-zRotation);
             fishingRodString.MoveDownwardWithPressure(pressure);
         }
-        animationController.UpdateAnimation(pressure, lastPressure);
-        soundController.PlaySound(pressure, lastPressure);
+        rodAnimation.UpdateAnimation(pressure, lastPressure);
+        sound.PlaySound(pressure, lastPressure);
     }
 }
