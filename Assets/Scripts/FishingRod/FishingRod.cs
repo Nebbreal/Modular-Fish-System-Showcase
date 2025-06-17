@@ -34,13 +34,19 @@ public class FishingRod : MonoBehaviour
         {
             GenerateFish();
             
-            Transform fishTransform = _generatedFish.gameObject.transform;
-            fishTransform.SetParent(fishSpawnLocation);
-
+            fishingRodString.AttachFish(_generatedFish);
+            
             _readyToReelIn = true;
         }
         else if (pressure < pressureToReelIn && _readyToReelIn)
         {
+            fishingRodString.DetachFish(_generatedFish);
+            Transform fishTransform = _generatedFish.gameObject.transform;
+            
+            fishTransform.SetParent(fishSpawnLocation);
+            fishTransform.localScale = new(1f, 1f, 1f);
+            fishTransform.localPosition = Vector3.zero;
+            
             popUpScreen.gameObject.SetActive(true);
             _readyToReelIn = false;
         }
@@ -62,7 +68,6 @@ public class FishingRod : MonoBehaviour
         if (pressureChanged)
         {
             float pressurePercentage = pressure / maxPressure;
-            
             
             //Set the Z rotation based on how hard the Pillo is pressed ranging from 0% of maxAngle to 100% of maxAngle
             float zRotation = -pressurePercentage * maxAngle;

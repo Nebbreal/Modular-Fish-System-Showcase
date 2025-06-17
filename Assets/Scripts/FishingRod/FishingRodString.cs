@@ -5,19 +5,23 @@ public class FishingRodString : MonoBehaviour
 {
     [SerializeField] private GameObject stringTop;
     [SerializeField] private GameObject rodTip;
+    
     [SerializeField] private GameObject stringSpriteMask;
     private float _stringLength;
     private float _localStringPivotY;
-    private float _topSpriteMaskY;
-
+    
+    [SerializeField] private GameObject hook;
+    [SerializeField] private Vector3 hookedFishScale = new(3f, 3f, 3f);
+    private Transform _hookTransform;
+    
     private void Start()
     {
         float stringTopY = stringTop.transform.position.y;
         float rodTipY = rodTip.transform.position.y;
         
+        _hookTransform = hook.transform;
         _localStringPivotY = transform.localPosition.y;
         _stringLength = stringTopY - rodTipY;
-        _topSpriteMaskY = stringSpriteMask.transform.position.y;
     }
     
     public void RotateZ(float angle)
@@ -40,5 +44,21 @@ public class FishingRodString : MonoBehaviour
         //Force the x position to be in line with the fishing rod tip
         transform.position = new Vector3(rodTip.transform.position.x, transform.position.y);
         stringSpriteMask.transform.position = new Vector3(rodTip.transform.position.x, stringSpriteMask.transform.position.y);
+    }
+
+    public void AttachFish(GameObject fish)
+    {
+        Transform fishTransform = fish.transform;
+        
+        fishTransform.SetParent(_hookTransform);
+        fishTransform.localPosition = Vector3.zero;
+        fishTransform.localScale = hookedFishScale;
+        fishTransform.rotation = Quaternion.Euler(0f, 0f, -90f);
+    }
+
+    public void DetachFish(GameObject fish)
+    {
+        Transform fishTransform = fish.transform;
+        fishTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 }
