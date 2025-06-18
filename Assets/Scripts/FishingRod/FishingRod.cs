@@ -79,8 +79,9 @@ public class FishingRod : MonoBehaviour
             transform.position = newRodPosition;
             
             fishingRodString.RotateZ(-zRotation);
-            fishingRodString.MoveDownwardWithPressure(pressure);
         }
+        float yOffset = fishingRodString.GetHoverYOffset(_readyToReelIn);
+        fishingRodString.MoveDownwardWithPressure(pressure, yOffset);
         rodAnimation.UpdateAnimation(pressure, lastPressure);
         sound.PlaySound(pressure, lastPressure);
     }
