@@ -1,32 +1,33 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PopUpController popUpScreen;
-    [SerializeField] private FishingRodController fishingRodController;
+    [FormerlySerializedAs("fishingRodController")] [SerializeField] private FishingRod fishingRod;
 
-    private float pressure;
-    private float lastPressure;
-    private float maxPressure;
+    private float _pressure;
+    private float _lastPressure;
+    private float _maxPressure;
 
     void Start()
     {
         if (PISKController.Instance == null) return;
-        maxPressure = PISKController.Instance.MaxPressure;
+        _maxPressure = PISKController.Instance.MaxPressure;
     }
 
     void Update()
     {
         UpdatePressure();
-        fishingRodController.RotateWithPressure(pressure, lastPressure, maxPressure);
-        popUpScreen.HandleHidingPopUp(pressure);
-        fishingRodController.TryCatchFish(pressure);
+        fishingRod.RotateWithPressure(_pressure, _lastPressure, _maxPressure);
+        popUpScreen.HandleHidingPopUp(_pressure);
+        fishingRod.TryCatchFish(_pressure);
     }
 
     private void UpdatePressure()
     {
         if (PISKController.Instance == null) return;
-        lastPressure = pressure;
-        pressure = PISKController.Instance.Pressure;
+        _lastPressure = _pressure;
+        _pressure = PISKController.Instance.Pressure;
     }
 }

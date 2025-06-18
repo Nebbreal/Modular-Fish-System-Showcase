@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class FishingRodSoundController : MonoBehaviour
+public class FishingRodSound : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private PressureDependantAudioClip[] audioClips;
