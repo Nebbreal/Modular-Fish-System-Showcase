@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -14,6 +15,10 @@ public class FishingRodString : MonoBehaviour
     [SerializeField] private Vector3 hookedFishScale = new(3f, 3f, 3f);
     private Transform _hookTransform;
     
+    [FormerlySerializedAs("FishingRodStringCurve")] [SerializeField] AnimationCurve fishingRodStringCurve;
+    private float _hoverYOffset;
+    private float _curveTimer;
+    
     private void Start()
     {
         float stringTopY = stringTop.transform.position.y;
@@ -22,6 +27,11 @@ public class FishingRodString : MonoBehaviour
         _hookTransform = hook.transform;
         _localStringPivotY = transform.localPosition.y;
         _stringLength = stringTopY - rodTipY;
+    }
+
+    private void Update()
+    {
+        _curveTimer += Time.deltaTime;
     }
     
     public void RotateZ(float angle)
@@ -44,6 +54,20 @@ public class FishingRodString : MonoBehaviour
         //Force the x position to be in line with the fishing rod tip
         transform.position = new Vector3(rodTip.transform.position.x, transform.position.y);
         stringSpriteMask.transform.position = new Vector3(rodTip.transform.position.x, stringSpriteMask.transform.position.y);
+    }
+    
+    public float GetHoverYOffset(bool _readyToReelIn)
+    {
+        if (_readyToReelIn)
+        {
+            _hoverYOffset = fishingRodStringCurve.Evaluate(_curveTimer % fishingRodStringCurve.length);
+        }
+        else
+        {
+            _curveTimer = 0f;
+        }
+        
+        return _hoverYOffset;
     }
 
     public void AttachFish(GameObject fish)
