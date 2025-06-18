@@ -36,9 +36,8 @@ public class FishingRodString : MonoBehaviour
     {
         Vector3 eulerAngle = new Vector3(0f, 0f, angle);
         
-        //Counteract the rotation of the rod to keep the rod (and mask) straight
-        transform.localEulerAngles = eulerAngle;
-        stringSpriteMask.transform.localEulerAngles = eulerAngle;
+        //Counteract the rotation of the rod to keep the tip (and mask) straight
+        rodTip.transform.localEulerAngles = eulerAngle;
     }
 
     public void MoveDownwardWithPressure(float pressure, float yOffset = 0f)
@@ -50,8 +49,10 @@ public class FishingRodString : MonoBehaviour
         transform.localPosition = transformVector;
         
         //Force the x position to be in line with the fishing rod tip
-        transform.position = new Vector3(rodTip.transform.position.x, transform.position.y);
-        stringSpriteMask.transform.position = new Vector3(rodTip.transform.position.x, stringSpriteMask.transform.position.y);
+        Vector3 localPos = transform.localPosition;
+        transform.localPosition = new Vector3(0f, localPos.y, 0f);
+        stringSpriteMask.transform.localPosition = new Vector3(0f, stringSpriteMask.transform.localPosition.y, 0f);
+
     }
     
     public float GetHoverYOffset(bool _readyToReelIn)
