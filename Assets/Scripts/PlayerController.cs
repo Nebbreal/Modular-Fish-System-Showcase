@@ -1,10 +1,10 @@
+using Hulan.PilloSDK.DeviceManager;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PopUpController popUpScreen;
-    [FormerlySerializedAs("fishingRodController")] [SerializeField] private FishingRod fishingRod;
+    [SerializeField] private FishingRod fishingRod;
 
     private float _pressure;
     private float _lastPressure;
@@ -12,22 +12,37 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        if (PISKController.Instance == null) return;
-        _maxPressure = PISKController.Instance.MaxPressure;
+        if (PISKController.Instance != null)
+        {
+            _maxPressure = PISKController.Instance.MaxPressure; 
+        }
+        else
+        {
+            PilloDeviceManager.onPeripheralPressureDidChange += HandlePressureChange;
+            _maxPressure = 1024f;
+        }
     }
 
     void Update()
     {
-        UpdatePressure();
-        fishingRod.RotateWithPressure(_pressure, _lastPressure, _maxPressure);
+        if (PISKController.Instance != null)
+        {
+            _pressure = PISKController.Instance.Pressure;
+        }
+        
+        fishingRod.RotateWithPressure(_pressure, _lastPressure);
         popUpScreen.HandleHidingPopUp(_pressure);
         fishingRod.TryCatchFish(_pressure);
     }
 
-    private void UpdatePressure()
+    private void LateUpdate()
     {
-        if (PISKController.Instance == null) return;
         _lastPressure = _pressure;
-        _pressure = PISKController.Instance.Pressure;
+    }
+
+    private void HandlePressureChange(string identifier, int pressure)
+    {
+        //pressure is from the PilloDeviceManager. It needs to scale to our pressure range (0-100)
+        _pressure = pressure / _maxPressure * 100f;
     }
 }

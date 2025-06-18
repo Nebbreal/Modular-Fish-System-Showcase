@@ -61,13 +61,13 @@ public class FishingRod : MonoBehaviour
         _generatedFish.transform.position = fishSpawnLocation.position;
     }
     
-    public void RotateWithPressure(float pressure, float lastPressure, float maxPressure)
+    public void RotateWithPressure(float pressure, float lastPressure)
     {
         bool pressureChanged = !Mathf.Approximately(pressure, lastPressure);
 
         if (pressureChanged)
         {
-            float pressurePercentage = pressure / maxPressure;
+            float pressurePercentage = pressure / 100f;
             
             //Set the Z rotation based on how hard the Pillo is pressed ranging from 0% of maxAngle to 100% of maxAngle
             float zRotation = -pressurePercentage * maxAngle;
