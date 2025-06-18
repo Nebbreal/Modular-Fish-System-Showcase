@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class FishingRodString : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class FishingRodString : MonoBehaviour
     [SerializeField] private Vector3 hookedFishScale = new(3f, 3f, 3f);
     private Transform _hookTransform;
     
-    [FormerlySerializedAs("FishingRodStringCurve")] [SerializeField] AnimationCurve fishingRodStringCurve;
+    [SerializeField] AnimationCurve fishingRodStringCurve;
     private float _hoverYOffset;
     private float _curveTimer;
     
