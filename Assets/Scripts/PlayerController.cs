@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
             _pressure = PISKController.Instance.Pressure;
         }
         
-        fishingRod.RotateWithPressure(_pressure, _lastPressure, _maxPressure);
+        fishingRod.RotateWithPressure(_pressure, _lastPressure);
         popUpScreen.HandleHidingPopUp(_pressure);
         fishingRod.TryCatchFish(_pressure);
     }
@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandlePressureChange(string identifier, int pressure)
     {
-        _pressure = pressure / _maxPressure * 100f; //to convert to the pressure values (0-100)
+        //pressure is from the PilloDeviceManager. It needs to scale to our pressure range (0-100)
+        _pressure = pressure / _maxPressure * 100f;
     }
 }
