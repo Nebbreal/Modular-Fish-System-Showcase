@@ -2138,6 +2138,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1470991787676629070, guid: 8a138f5d13681694682adf36a7c14538, type: 3}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6766807280176476122, guid: 8a138f5d13681694682adf36a7c14538, type: 3}
       propertyPath: m_LocalPosition.x
       value: -36.75
