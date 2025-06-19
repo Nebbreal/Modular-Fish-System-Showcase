@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FishingRodString : MonoBehaviour
 {
+    [SerializeField] private GameObject bubbles;
     [SerializeField] private GameObject stringTop;
     [SerializeField] private GameObject rodTip;
     
@@ -59,10 +60,12 @@ public class FishingRodString : MonoBehaviour
     {
         if (_readyToReelIn)
         {
+            bubbles.SetActive(true);
             _hoverYOffset = fishingRodStringCurve.Evaluate(_curveTimer % fishingRodStringCurve.length);
         }
         else
         {
+            bubbles.SetActive(false);
             _curveTimer = 0f;
         }
         
