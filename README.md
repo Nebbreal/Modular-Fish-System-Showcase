@@ -1,7 +1,7 @@
 # Meer Momo
 
 ## Description
-Meer Momo is a fishing game meant for mentally  and physically disabled people to play on a [Pillo](https://pillo.nl/). In Meer Momo the player can catch random fish using the Pillo.
+Meer Momo is a fishing game made to play on a [Pillo](https://pillo.nl/), with disabled poeple in mind. In Meer Momo the player can catch random fish using the Pillo. The game should make the player feel relaxed while fishing in the comfort of their own home. 
 
 ## Installation
 
