@@ -6,9 +6,7 @@ Meer Momo is a fishing game meant for mentally  and physically disabled people t
 ## Installation
 
 ### Requirements
-- [Unity Hub](https://unity.com/download)
 - Unity editor version `6000.1.4f1`
-- [Git](https://git-scm.com/downloads)
 
 ### Installation steps
 1. **Clone the repository**
