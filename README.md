@@ -34,8 +34,3 @@ cd pillo-hulan-1
 ## Structure
 The folder structure is generally "task/object". Task being what type of file something is, like a script or prefab. Object being what it represents, like a fishing rod. 
 Related products might be in subfolders instead of its own folder.
-
-Some examples are:
-- PISK is located at `Assets/Plugins/PISK`
-- Fishbases are located at `Assets/Prefabs/ModularFish/FishBases`
-- PlayerController is located at `Assets/Prefabs/Character`
