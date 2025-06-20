@@ -34,3 +34,6 @@ cd pillo-hulan-1
 ## Structure
 The folder structure is generally "task/object". Task being what type of file something is, like a script or prefab. Object being what it represents, like a fishing rod. 
 Related products might be in subfolders instead of its own folder.
+
+## Build process
+The project gets merged and built inside the scene found in `Assets/Scenes/-Main.unity`, this happens in the `release` branch.
