@@ -228,12 +228,19 @@
       },
       "url": "https://packages.unity.com"
     },
+    "nl.hulan.pillo-sdk.build-tools": {
+      "version": "https://github.com/hulanbv/pillo-sdk.git?path=/UnityBuildTools",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "05d00483b82d4f04dd9634555e9a6b687dfd83f0"
+    },
     "nl.hulan.pillo-sdk.device-manager": {
       "version": "https://github.com/hulanbv/pillo-sdk.git?path=/UnityDeviceManager",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "0c4e03bd1b996009ff9d1d5b36537a50218ee78f"
+      "hash": "05d00483b82d4f04dd9634555e9a6b687dfd83f0"
     },
     "nl.hulan.pillo-sdk.simulator": {
       "version": "https://github.com/hulanbv/pillo-sdk.git?path=/UnitySimulator",
@@ -243,7 +250,7 @@
         "nl.hulan.pillo-sdk.device-manager": "5.0.0",
         "com.unity.modules.imgui": "1.0.0"
       },
-      "hash": "0c4e03bd1b996009ff9d1d5b36537a50218ee78f"
+      "hash": "05d00483b82d4f04dd9634555e9a6b687dfd83f0"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

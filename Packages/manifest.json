@@ -13,6 +13,7 @@
     "com.unity.timeline": "1.8.7",
     "com.unity.ugui": "2.0.0",
     "com.unity.visualscripting": "1.9.6",
+    "nl.hulan.pillo-sdk.build-tools": "https://github.com/hulanbv/pillo-sdk.git?path=/UnityBuildTools",
     "nl.hulan.pillo-sdk.device-manager": "https://github.com/hulanbv/pillo-sdk.git?path=/UnityDeviceManager",
     "nl.hulan.pillo-sdk.simulator": "https://github.com/hulanbv/pillo-sdk.git?path=/UnitySimulator",
     "com.unity.modules.accessibility": "1.0.0",
