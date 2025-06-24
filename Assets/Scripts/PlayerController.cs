@@ -30,12 +30,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (controllerMode && _isPressedIn)
-        {
-            SetTriggerPressure(_inputControl);
-        }
+        ControllerMode();
         
-        if (PISKController.Instance) 
+        if (PiskExists()) 
         {
             _pressure = PISKController.Instance.Pressure;
         }
@@ -63,6 +60,24 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region ControllerControls
+    private void ControllerMode()
+    {
+        if (!controllerMode) return;
+        
+        if (!PiskExists())
+        {
+            Debug.LogWarning("PISK is required for controller support to be properly implemented");
+        }
+        else if (controllerMode && _isPressedIn)
+        {
+            SetTriggerPressure(_inputControl);
+        }
+        else if (controllerMode && PiskExists())
+        {
+            PISKController.Instance.SetPressure(0);
+        }
+    }
+    
     public void ToggleTriggerPress(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -78,11 +93,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetTriggerPressure(InputControl inputControl)
     {
-        if (!PISKController.Instance)
-        {
-            Debug.LogWarning("PISK is required for controller support to be properly implemented");
-            return;
-        }
+        if (!PiskExists()) return;
         
         InputDevice inputDevice = inputControl.device;
         if (inputDevice is Gamepad)
@@ -90,6 +101,16 @@ public class PlayerController : MonoBehaviour
             float triggerValue = Gamepad.current.rightTrigger.ReadValue();
             PISKController.Instance.SetPressure(triggerValue * 100);
         }
+    }
+    #endregion
+
+    #region Utility
+    private static bool PiskExists()
+    {
+        if (PISKController.Instance && PISKController.Instance.isActiveAndEnabled) return true;
+        
+        
+        return false;
     }
     #endregion
 }
