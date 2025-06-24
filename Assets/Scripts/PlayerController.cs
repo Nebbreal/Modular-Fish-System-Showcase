@@ -1,43 +1,57 @@
+using Hulan.PilloSDK.DeviceManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PopUpController popUpScreen;
-    [SerializeField] private FishingRodController fishingRodController;
-    [SerializeField] private PISKController pisk;
-    
-    private float pressure;
-    private float lastPressure;
-    private float maxPressure;
+    [SerializeField] private FishingRod fishingRod;
+
+    private float _pressure;
+    private float _lastPressure;
+    private float _maxPressure;
 
     private bool isPressedIn = false;
     private InputControl _inputControl;
     
     void Start()
     {
-        if (PISKController.Instance == null) return;
-        maxPressure = PISKController.Instance.MaxPressure;
+        if (PISKController.Instance != null)
+        {
+            _maxPressure = PISKController.Instance.MaxPressure; 
+        }
+        else
+        {
+            PilloDeviceManager.onPeripheralPressureDidChange += HandlePressureChange;
+            _maxPressure = 1024f;
+        }
     }
 
     void Update()
     {
-        UpdatePressure();
+        if (PISKController.Instance != null)
+        {
+            _pressure = PISKController.Instance.Pressure;
+        }
         if (isPressedIn)
         {
             SetTriggerPressure(_inputControl);
         }
         
-        fishingRodController.RotateWithPressure(pressure, lastPressure, maxPressure);
-        popUpScreen.HandleHidingPopUp(pressure);
-        fishingRodController.TryCatchFish(pressure);
+        fishingRod.RotateWithPressure(_pressure, _lastPressure);
+        popUpScreen.HandleHidingPopUp(_pressure);
+        fishingRod.TryCatchFish(_pressure);
     }
 
-    private void UpdatePressure()
+    private void LateUpdate()
     {
-        if (PISKController.Instance == null) return;
-        lastPressure = pressure;
-        pressure = PISKController.Instance.Pressure;
+        _lastPressure = _pressure;
+    }
+
+    private void HandlePressureChange(string identifier, int pressure)
+    {
+        //pressure is from the PilloDeviceManager. It needs to scale to our pressure range (0-100)
+        _pressure = pressure / _maxPressure * 100f;
     }
     
     public void ToggleTriggerPress(InputAction.CallbackContext context)
