@@ -6,12 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] PopUpController popUpScreen;
     [SerializeField] private FishingRod fishingRod;
-
+    [SerializeField] private bool controllerMode;
+    
     private float _pressure;
     private float _lastPressure;
     private float _maxPressure;
 
-    private bool isPressedIn = false;
+    private bool _isPressedIn = false;
     private InputControl _inputControl;
     
     void Start()
@@ -29,13 +30,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (PISKController.Instance != null)
-        {
-            _pressure = PISKController.Instance.Pressure;
-        }
-        if (isPressedIn)
+        if (controllerMode && _isPressedIn)
         {
             SetTriggerPressure(_inputControl);
+        }
+        
+        if (PISKController.Instance) 
+        {
+            _pressure = PISKController.Instance.Pressure;
         }
         
         fishingRod.RotateWithPressure(_pressure, _lastPressure);
@@ -48,32 +50,46 @@ public class PlayerController : MonoBehaviour
         _lastPressure = _pressure;
     }
 
+    #region PilloControls
     private void HandlePressureChange(string identifier, int pressure)
-    {
-        //pressure is from the PilloDeviceManager. It needs to scale to our pressure range (0-100)
-        _pressure = pressure / _maxPressure * 100f;
-    }
-    
+        {
+            //pressure is taken from the PilloDeviceManager. 
+            
+            //Amplify the pressure due to the system assuming different values than the Pillo's values
+            //Our system the pressure range of (0-100)
+            float newPressure = pressure / _maxPressure * 100f * 4f;
+            _pressure = Mathf.Clamp(newPressure, 0f, 100f);
+        }
+    #endregion
+
+    #region ControllerControls
     public void ToggleTriggerPress(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             _inputControl = context.control;
-            isPressedIn = true;
+            _isPressedIn = true;
         }
         else if (context.canceled)
         {
-            isPressedIn = false;
+            _isPressedIn = false;
         }
     }
 
     private void SetTriggerPressure(InputControl inputControl)
     {
+        if (!PISKController.Instance)
+        {
+            Debug.LogWarning("PISK is required for controller support to be properly implemented");
+            return;
+        }
+        
         InputDevice inputDevice = inputControl.device;
         if (inputDevice is Gamepad)
         {
             float triggerValue = Gamepad.current.rightTrigger.ReadValue();
-            pisk.SetPressure(triggerValue * 100);
+            PISKController.Instance.SetPressure(triggerValue * 100);
         }
     }
+    #endregion
 }
