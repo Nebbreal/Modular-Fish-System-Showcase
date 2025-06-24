@@ -50,8 +50,7 @@ public class PlayerController : MonoBehaviour
     #region PilloControls
     private void HandlePressureChange(string identifier, int pressure)
         {
-            //pressure is taken from the PilloDeviceManager. 
-            
+            //Pressure is taken from the PilloDeviceManager. 
             //Amplify the pressure due to the system assuming different values than the Pillo's values
             //Our system the pressure range of (0-100)
             float newPressure = pressure / _maxPressure * 100f * 4f;
@@ -108,7 +107,6 @@ public class PlayerController : MonoBehaviour
     private static bool PiskExists()
     {
         if (PISKController.Instance && PISKController.Instance.isActiveAndEnabled) return true;
-        
         
         return false;
     }
