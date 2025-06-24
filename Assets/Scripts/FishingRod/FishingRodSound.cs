@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class FishingRodSoundController : MonoBehaviour
+public class FishingRodSound : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private PressureDependantAudioClip[] audioClips;
@@ -15,7 +15,6 @@ public class FishingRodSoundController : MonoBehaviour
     {
         float pressureDifference = Mathf.Abs(pressure - lastPressure);
         PressureDependantAudioClip audioClip = audioClips.FirstOrDefault(clip => clip.pressureThreshold < pressureDifference);
-
         if (audioClip == null)
         {
             audioSource.Stop();
