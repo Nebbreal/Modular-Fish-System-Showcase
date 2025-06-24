@@ -15,7 +15,6 @@ public class FishingRodSound : MonoBehaviour
     {
         float pressureDifference = Mathf.Abs(pressure - lastPressure);
         PressureDependantAudioClip audioClip = audioClips.FirstOrDefault(clip => clip.pressureThreshold < pressureDifference);
-
         if (audioClip == null)
         {
             audioSource.Stop();
