@@ -49,13 +49,13 @@ public class PlayerController : MonoBehaviour
 
     #region PilloControls
     private void HandlePressureChange(string identifier, int pressure)
-        {
-            //Pressure is taken from the PilloDeviceManager. 
-            //Amplify the pressure due to the system assuming different values than the Pillo's values
-            //Our system the pressure range of (0-100)
-            float newPressure = pressure / _maxPressure * 100f * 4f;
-            _pressure = Mathf.Clamp(newPressure, 0f, 100f);
-        }
+    {
+        //Pressure is taken from the PilloDeviceManager. 
+        //Amplify the pressure due to the system assuming different values than the Pillo's values
+        //Our system the pressure range of (0-100)
+        float newPressure = pressure / _maxPressure * 100f * 4f;
+        _pressure = Mathf.Clamp(newPressure, 0f, 100f);
+    }
     #endregion
 
     #region ControllerControls
