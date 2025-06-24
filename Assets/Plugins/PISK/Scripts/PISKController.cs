@@ -34,26 +34,50 @@ public class PISKController : MonoBehaviour
 
         Instance = this;
     }
+    
 
-    void Update()
+
+    void AdjustPressure(float amount)
     {
-        bool spacePressed = Keyboard.current?.spaceKey?.isPressed ?? false;
+        Pressure = Mathf.Clamp(Pressure + amount, MinPressure, MaxPressure);
+    }
+    
+private bool isExternalPressureSet = false;
 
-        if (spacePressedLastFrame && !spacePressed)
+// Update method with external pressure lerping
+void Update()
+{
+    bool spacePressed = Keyboard.current?.spaceKey?.isPressed ?? false;
+
+    if (spacePressedLastFrame && !spacePressed)
+    {
+        isCooldownActive = true;
+        cooldownTimer = LerpCooldown;
+    }
+
+    if (isCooldownActive)
+    {
+        cooldownTimer -= Time.deltaTime * 1000f;
+        if (cooldownTimer <= 0f)
         {
-            isCooldownActive = true;
-            cooldownTimer = LerpCooldown;
+            isCooldownActive = false;
         }
+    }
 
-        if (isCooldownActive)
+    if (isExternalPressureSet)
+    {
+        // External target is overriding regular input
+        float lerpSpeed = (targetPressure > Pressure) ? PressLerpSpeed : ReleaseLerpSpeed;
+        float rawPressure = Mathf.Lerp(Pressure, targetPressure, lerpSpeed * Time.deltaTime);
+        Pressure = SmartRound(rawPressure, targetPressure);
+
+        if (Mathf.Approximately(Pressure, targetPressure))
         {
-            cooldownTimer -= Time.deltaTime * 1000f;
-            if (cooldownTimer <= 0f)
-            {
-                isCooldownActive = false;
-            }
+            isExternalPressureSet = false; // Stop once target is reached
         }
-
+    }
+    else
+    {
         if (spacePressed)
         {
             targetPressure = MaxPressure;
@@ -70,15 +94,17 @@ public class PISKController : MonoBehaviour
         float lerpSpeed = spacePressed ? PressLerpSpeed : ReleaseLerpSpeed;
         float rawPressure = Mathf.Lerp(Pressure, targetPressure, lerpSpeed * Time.deltaTime);
         Pressure = SmartRound(rawPressure, targetPressure);
-
-        spacePressedLastFrame = spacePressed;
     }
 
+    spacePressedLastFrame = spacePressed;
+}
 
-    void AdjustPressure(float amount)
-    {
-        Pressure = Mathf.Clamp(Pressure + amount, MinPressure, MaxPressure);
-    }
+// Modified SetPressure method
+public void SetPressure(float amount)
+{
+    targetPressure = Mathf.Clamp(amount, MinPressure, MaxPressure);
+    isExternalPressureSet = true;
+}
 
     public void SetPressLerpSpeed(float amount)
     {
