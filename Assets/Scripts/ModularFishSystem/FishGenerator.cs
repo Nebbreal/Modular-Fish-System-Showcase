@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ModularFishSystem.Demo;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -25,6 +26,7 @@ public class FishGenerator : MonoBehaviour
     private const string MouthTag = "Mouth";
     private const string RearFinTag = "RearFin";
     private const string HatTag = "Hat";
+    private const string BaseTag = "Base";
     
     [Header("Configuration")]
     [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored base for the fish. 0 = 0% chance, 1 = 100% chance")]
@@ -144,6 +146,9 @@ public class FishGenerator : MonoBehaviour
         }
         
         spriteRenderer.sprite = selectedSprite;
+        
+        if (DemoPartUIUpdater.Instance)
+            DemoPartUIUpdater.Instance.OnPartUIUpdateEvent.Invoke(spriteRenderer.name, selectedSprite.name);
     }
 
     private void SetRendererToRandomColor(SpriteRenderer fishPartRenderer)
@@ -164,6 +169,10 @@ public class FishGenerator : MonoBehaviour
         fish = Instantiate(fishes[randomIndex]);
         fish.SetActive(false);
         fishTransform = fish.transform;
+        
+        if (DemoPartUIUpdater.Instance)
+            DemoPartUIUpdater.Instance.OnPartUIUpdateEvent.Invoke(BaseTag, fish.name);
+        
         return fish;
     }
     
