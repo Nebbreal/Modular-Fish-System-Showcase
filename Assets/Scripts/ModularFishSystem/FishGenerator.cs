@@ -27,8 +27,10 @@ public class FishGenerator : MonoBehaviour
     private const string RearFinTag = "RearFin";
     private const string HatTag = "Hat";
     private const string BaseTag = "Base";
-    
-    [Header("Configuration")]
+
+    [Header("Configuration")] 
+    [SerializeField, Range(0.1f, 2f), Tooltip("size the fish will be Instantiated at")]
+    private float fishSize = 1f;
     [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored base for the fish. 0 = 0% chance, 1 = 100% chance")]
     private float shiftableBaseChance;
     [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored part for the fish. 0 = 0% chance, 1 = 100% chance")]
@@ -167,6 +169,7 @@ public class FishGenerator : MonoBehaviour
     {
         GameObject fish;
         fish = Instantiate(fishes[randomIndex]);
+        fish.transform.localScale = new Vector3(fishSize, fishSize, fishSize);
         fish.SetActive(false);
         fishTransform = fish.transform;
         

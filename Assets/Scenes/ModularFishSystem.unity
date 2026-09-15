@@ -232,6 +232,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
+      propertyPath: fishSize
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: hatChance
       value: 0.2
       objectReference: {fileID: 0}
