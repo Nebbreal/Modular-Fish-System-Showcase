@@ -86,6 +86,10 @@ public class FishGenerator : MonoBehaviour
                 if (hatRngValue >= hatChance)
                 {
                     fishPartRenderer.sprite = null;
+                    
+                    if (DemoPartUIUpdater.Instance)
+                        DemoPartUIUpdater.Instance.OnPartUIUpdateEvent.Invoke(HatTag, "None");
+                    
                     continue;
                 }
             }
