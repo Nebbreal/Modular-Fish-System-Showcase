@@ -16,7 +16,6 @@ namespace ModularFishSystem.Demo.CurrentFishDisplay
             if (Instance == null)
             {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
             }
             else
             {

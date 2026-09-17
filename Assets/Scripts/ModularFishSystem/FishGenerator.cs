@@ -30,17 +30,17 @@ namespace ModularFishSystem
 
         [Header("Configuration")] 
         [SerializeField, Range(0.1f, 2f), Tooltip("size the fish will be Instantiated at")]
-        private float fishSize = 1f;
+        public float fishSize = 1f;
         [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored base for the fish. 0 = 0% chance, 1 = 100% chance")]
-        private float shiftableBaseChance;
+        public float shiftableBaseChance;
         [SerializeField, Range(0f, 1f), Tooltip("Chance to select a randomly colored part for the fish. 0 = 0% chance, 1 = 100% chance")]
-        private float shiftablePartChance;
+        public float shiftablePartChance;
         [SerializeField, Range(0f, 1f), Tooltip("Chance for the fish to have a hat if applicable. 0 = 0% chance, 1 = 100% chance")]
-        private float hatChance;
+        public float hatChance;
         [SerializeField, Range(0f, 1f), Tooltip("Minimum value for the randomly selected color")]
-        private float minimumValue;
+        public float minimumValue;
         [SerializeField, Range(0f, 1f), Tooltip("Minimum saturation value for the randomly selected color")]
-        private float minimumSaturation;
+        public float minimumSaturation;
 
         public GameObject GenerateFish()
         {
@@ -195,38 +195,6 @@ namespace ModularFishSystem
             }
         
             return fishPartRenderers;
-        }
-        #endregion
-
-        #region Settings
-        public void SetFishSize(float value)
-        {
-            fishSize = value;
-        }
-
-        public void SetShiftableBaseChance(float value)
-        {
-            shiftableBaseChance = value;
-        }
-
-        public void SetShiftablePartChance(float value)
-        {
-            shiftablePartChance = value;
-        }
-
-        public void SetHatChance(float value)
-        {
-            hatChance = value;
-        }
-
-        public void SetMinimumValue(float value)
-        {
-            minimumValue = value;
-        }
-
-        public void SetMinimumSaturation(float value)
-        {
-            minimumSaturation = value;
         }
         #endregion
     }
