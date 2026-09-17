@@ -1,3 +1,4 @@
+using ModularFishSystem;
 using UnityEngine;
 
 public class ModularFishShowcaseButton : MonoBehaviour

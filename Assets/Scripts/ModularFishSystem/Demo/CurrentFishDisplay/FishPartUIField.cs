@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ModularFishSystem.Demo
+namespace ModularFishSystem.Demo.CurrentFishDisplay
 {
     public class FishPartUIField : MonoBehaviour
     {

@@ -6,7 +6,7 @@ Meer Momo is a fishing game made to play on a [Pillo](https://pillo.nl/), with d
 ## Installation
 
 ### Requirements
-- Unity editor version `6000.1.4f1`
+- Unity editor version `6000.3.9f1`
 
 ### Installation steps
 1. **Clone the repository**
@@ -14,8 +14,8 @@ Meer Momo is a fishing game made to play on a [Pillo](https://pillo.nl/), with d
 Clone the repository by clicking the code button at the top of the page or clone the repository with the following command:
 
 ```
-git clone https://projects.fhict.nl:gdt/spring-2025/game-design/pillo-hulan-1.git
-cd pillo-hulan-1
+git clone https://github.com/Nebbreal/Meer-Momo
+cd Meer-Momo
 ```
 
 2. **Open with Unity Hub**
@@ -34,6 +34,3 @@ cd pillo-hulan-1
 ## Structure
 The folder structure is generally "task/object". Task being what type of file something is, like a script or prefab. Object being what it represents, like a fishing rod. 
 Related products might be in subfolders instead of its own folder.
-
-## Build process
-The project gets merged and built inside the scene found in `Assets/Scenes/-Main.unity`, this happens in the `release` branch.

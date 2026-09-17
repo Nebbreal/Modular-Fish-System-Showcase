@@ -1,4 +1,5 @@
 using System;
+using ModularFishSystem;
 using UnityEngine;
 using UnityEngine.Serialization;
 
