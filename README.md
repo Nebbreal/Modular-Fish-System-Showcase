@@ -1,7 +1,13 @@
-# Meer Momo
+# Modular Fish system
 
 ## Description
-Meer Momo is a fishing game made to play on a [Pillo](https://pillo.nl/), with disabled people in mind. In Meer Momo the player can catch random fish using the Pillo. The game should make the player feel relaxed while fishing in the comfort of their own home. 
+The Modular Fish System is a tool made for Meer Momo, a fishing game made to play on a [Pillo](https://pillo.nl/).
+The system is intended to make it easy for developers of Meer Momo to easily add a large variety of fish without having to draw a large amount of sprites.
+
+The system works by taking a base of a fish alongside multiple pools of body parts to generate a unique fish. 
+These bases do require some manual setup due to them needing designated slots for body parts to go.
+
+The system also includes various configuration options such as the chance for a hat or the size of the generated fish.
 
 ## Installation
 
@@ -9,13 +15,17 @@ Meer Momo is a fishing game made to play on a [Pillo](https://pillo.nl/), with d
 - Unity editor version `6000.3.9f1`
 
 ### Installation steps
+
+Head to https://nebbdev.itch.io/modular-fish-system-showcase
+
+**or**
+
 1. **Clone the repository**
 
 Clone the repository by clicking the code button at the top of the page or clone the repository with the following command:
 
 ```
-git clone https://github.com/Nebbreal/Meer-Momo
-cd Meer-Momo
+git clone https://github.com/Nebbreal/Modular-Fish-System-Showcase
 ```
 
 2. **Open with Unity Hub**
