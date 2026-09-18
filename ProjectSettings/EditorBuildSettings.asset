@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/-Main.unity
-    guid: 31adc0ddce6044548b750e1bf542cd78
+    path: Assets/Scenes/ModularFishSystem.unity
+    guid: 39ed55ea588c76d43b5d78b360e14708
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
