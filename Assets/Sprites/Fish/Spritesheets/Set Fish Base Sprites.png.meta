@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 202c7ca502b8f9949a032872d1983801
+guid: 9900988259870bacd9e07cde30101977
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,11 +93,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Set Fish Base Sprites_0
+      name: Set Fish Base Sprites 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -105,21 +118,21 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb3cbd71eda5cd14d958c804bffb5405
-      internalID: 1868124602
+      spriteID: 98a2bc22258c21641a442453a7c8a99b
+      internalID: 59690088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set Fish Base Sprites_1
+      name: Set Fish Base Sprites 1_1
       rect:
         serializedVersion: 2
         x: 1024
@@ -127,15 +140,15 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92eb9658c9413f64d93c4b32661df015
-      internalID: -403945682
+      spriteID: 2a66e72c7e67ef2159958b5340afc285
+      internalID: 1934593592
       vertices: []
       indices: 
       edges: []
@@ -144,7 +157,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3786d28d56f1b74419d96fdcda693581
+    spriteID: 42264b52fd7ca2b79ba3aa29b9f4933d
     internalID: 0
     vertices: []
     indices: 
@@ -154,10 +167,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Set Fish Base Sprites_0: 1868124602
-      Set Fish Base Sprites_1: -403945682
+      Set Fish Base Sprites 1_0: 59690088
+      Set Fish Base Sprites 1_1: 1934593592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

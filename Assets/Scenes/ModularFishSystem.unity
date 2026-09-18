@@ -1242,7 +1242,7 @@ PrefabInstance:
       objectReference: {fileID: 3093792496056450985, guid: 84a6ab56953f8c34492009230a264e6f, type: 3}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: setFishBases.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7406556416668986636, guid: 971894335de810a4ea011d7ada5dd546, type: 3}
       propertyPath: setEyeSprites.Array.size
